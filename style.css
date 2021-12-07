@@ -2,29 +2,27 @@
   border-radius: 20px;
   /* border: 1px solid grey; */
   /* background: #f7f7f7; */
-  background-color: rgb(49, 49, 49);
-  box-shadow: 0 0 1rem 0.01rem;
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0 1rem 0.05rem;
   min-height: 52ch;
 }
-.inner-card h1{
-  font-family: 'Estonia', cursive;
-  color: white;
+.inner-card h1 {
+  font-family: "Estonia", cursive;
+  /* color: white; */
   font-size: 4rem;
+  font-weight: 550;
 }
-.inner-card p{
+/* .inner-card p {
   color: white;
-}
-.img{
+} */
+.img {
   border-radius: 10px;
 }
-.trip-text{
+.trip-text {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
-  color: white;
-}
-form{
   color: white;
 }
 .form-input {
@@ -38,88 +36,108 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: white !important;
 }
-#hello::before{
+#hello::before {
   position: absolute;
-  content: '';
-  background-image: url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/201810/Railways_Leh_China_Border_Longest_Line.jpeg?blTQl_mQAIZ81hmuB1ISFieFvxqLIpK_&size=1200:675') no-repeat center center/cover;
+  content: "";
+  background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/201810/Railways_Leh_China_Border_Longest_Line.jpeg?blTQl_mQAIZ81hmuB1ISFieFvxqLIpK_&size=1200:675")
+    no-repeat center center/cover;
   border-radius: 15px;
   top: 0%;
   left: 0%;
 }
-.navbar-body{
+.navbar-body {
   height: 4rem;
   background: rgb(125, 173, 236);
   border-radius: 3000px;
   width: 50rem;
 }
-#navbar{
+#navbar {
   transform: translateY(-50px);
 }
 @media only screen and (max-width: 1400px) {
-  .navbar-body{
+  .navbar-body {
     width: 40rem;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .navbar-body{
+  .navbar-body {
     width: 35rem;
   }
 }
 @media only screen and (max-width: 800px) {
-  .navbar-body{
+  .navbar-body {
     width: 25rem;
     height: 3rem;
   }
-  #navbar{
+  #navbar {
     transform: translateY(-40px);
   }
 }
-.navbar-item{
+.navbar-item {
   list-style: none;
 }
-.navbar-link{
+.navbar-link {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-.navbar-link:hover{
+.navbar-link:hover {
   color: black;
   font-weight: bolder;
 }
-.vertical{
+.vertical {
   /* border-left: 1px solid rgb(0, 0, 0); */
   height: auto;
   margin-left: 2rem;
   margin-right: 2rem;
 }
 @media only screen and (max-width: 800px) {
-  .vertical{
+  .vertical {
     margin-top: 1rem;
     margin-right: 1rem;
   }
 }
 @media only screen and (max-width: 500px) {
-  .vertical{
+  .vertical {
     margin-top: 0px;
     margin-right: 0px;
   }
 }
-.grow{
-  overflow: hidden; 
+.grow {
+  overflow: hidden;
 }
-.grow img{
+.grow img {
   transition: all 0.5s ease-in-out;
   border-radius: 10px;
 }
-.grow img:hover{
+.grow img:hover {
   transition: all 0.5s ease-in-out;
   transform: scale(1.09);
   overflow: hidden;
 }
-.header{
+.header {
   background-color: rgb(100, 100, 100);
   border-radius: 400px;
   min-width: 35ch;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.first-nav{
+  animation: all 2s ease-in-out;
+}
+#navbar1 {
+  display: block;
+  background-color: rgb(54, 54, 54);
+  box-shadow: black 2px 2px 26px 3px;
+  border-end-end-radius: 15px;
+  border-end-start-radius: 15px;
+  animation: all 1s ease-in-out;
+}
+@media only screen and (max-width: 765px) {
+  .col-md-3 {
+    display: none;
+  }
+}
+.parallax-window{
+  background: rgba(80, 80, 80, 0.404);
 }

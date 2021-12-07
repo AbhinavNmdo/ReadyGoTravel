@@ -14,59 +14,60 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body style="background-color: rgb(27, 27, 27); font-family: 'Ubuntu', cursive;">
+<body style="background-color: rgb(230, 230, 230); font-family: 'Ubuntu', cursive;">
 
-    <div class="container p-2">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="header">
-                <h1 class="text-white">ReadyGo Travels</h1>
+    <div class="first-nav">
+        <nav id="navbar1" class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-lg">
+                <a class="navbar-brand fs-4" style="font-weight: bold; letter-spacing: 0.05cm;" href="#">ReadyGo
+                    Travels</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Plans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
     </div>
 
 
-    <div class="container mb-3">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" style="border-radius: 20px;">
-                <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="https://www.wedreamoftravel.com/wp-content/uploads/2019/12/We-DREAM-of-TRAVEL-1-1.jpg"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="5000">
-                    <img src="https://images.unsplash.com/photo-1605424231216-ef3269125573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHRoYXIlMjBkZXNlcnR8ZW58MHx8MHx8&w=1000&q=80"
-                        alt="" class="img-fluid d-block w-100">
-                </div>
+    <div class="container-fluid" style="margin: 80px auto 40px auto">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="https://assets-3.placeit.net/smart_templates/176bdf333ae7a7ac16586aba7c4a4b1a/assets/dhkfol26s0dnyyh0wywgwcsjmwe14ovb.jpg"
+                    alt="" class="img-fluid" style="border-radius: 20px;">
             </div>
-        </div>
-    </div>
-
-
-    <div id="navbar" class="container d-flex justify-content-center align-items-center navbar-style">
-        <div class="navbar-inline navbar-body d-flex justify-content-center align-items-center">
-            <ul class="d-flex flex-row p-0 m-0">
-                <li class="navbar-item ms-5">
-                    <a class="navbar-link" href="">Home</a>
-                </li>
-                <div class="vertical"></div>
-                <li class="navbar-item">
-                    <a class="navbar-link" href="">About</a>
-                </li>
-                <div class="vertical"></div>
-                <li class="navbar-item">
-                    <a class="navbar-link" href="">Plans</a>
-                </li>
-                <div class="vertical"></div>
-                <li class="navbar-item me-5">
-                    <a class="navbar-link" href="">Contact</a>
-                </li>
-            </ul>
+            <div class="col-md-6">
+                <img src="https://i.ytimg.com/vi/Iv6Lnb4NrGQ/maxresdefault.jpg" alt="" class="img-fluid"
+                    style="border-radius: 20px;">
+            </div>
+            <div class="col-md-3">
+                <img src="https://assets-3.placeit.net/smart_templates/176bdf333ae7a7ac16586aba7c4a4b1a/assets/dhkfol26s0dnyyh0wywgwcsjmwe14ovb.jpg"
+                    alt="" class="img-fluid" style="border-radius: 20px;">
+            </div>
         </div>
     </div>
 
 
     <div class="container mb-3">
         <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 mb-3">
                 <div class="p-4 inner-card">
                     <h1 class="form-text text-center">Welcome</h1>
                     <p class="mt-5 fs-5">ReadyGo Travels is a leading tour company based in Jabalpur, India with
@@ -76,7 +77,7 @@
                     <p style="margin-top: 1rem;">Contact Us: 787878787</p>
                 </div>
             </div>
-            <div class="col md-4 mb-3">
+            <!-- <div class="col md-4 mb-3">
                 <div class="inner-card p-4">
                     <h1 class="form-text text-center">Domestic Tours</h1>
                     <div class="d-flex flex-row align-items-center">
@@ -95,28 +96,23 @@
                         <h2 class="text-center fs-4 ms-5 text-white">Somnath Darshan</h2>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
+            </div> -->
+            <div class="col-md-6 mb-3">
                 <div class="p-4 inner-card">
                     <h1 class="form-text text-center mb-4">Your Query</h1>
                     <form>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address:</label>
-                            <input type="email" class="form-control"
-                                style="color: white; background-color: rgb(56, 56, 56); border-radius: 15px;"
-                                class="email">
+                            <input type="email" class="form-control" style="border-radius: 15px;" class="email">
                         </div>
                         <div class="mb-3">
                             <label for="mobile" class="form-label">Mobile Number:</label>
-                            <input type="email" class="form-control"
-                                style="color: white; background-color: rgb(56, 56, 56); border-radius: 15px;"
-                                class="mobile">
+                            <input type="email" class="form-control" style="border-radius: 15px;" class="mobile">
                         </div>
                         <div class="mb-3">
                             <lable for="query" class="form-label">Type Your Query:</lable>
-                            <textarea name="query" class="form-control"
-                                style="color: white; background-color: rgb(56, 56, 56); border-radius: 15px;"
-                                class="query" cols="10"></textarea>
+                            <textarea name="query" class="form-control" style="border-radius: 15px;" class="query"
+                                cols="10"></textarea>
                         </div>
                         <button class="btn btn-primary">Submit</button>
                     </form>
@@ -125,13 +121,59 @@
         </div>
     </div>
 
-    <h1 class="text-center text-white mb-3">Book Now</h1>
+    <div class="parallax-window" style="border-radius: 15px;" data-parallax="scroll"
+        data-image-src="https://rp-cms.imgix.net/wp-content/uploads/AUADV_20160630_MH_3899-4.jpg?auto=format&h=600&w=1200&fit=crop&crop=faces">
+        <div class="container d-flex justify-content-center align-items-center" style="min-height: 30rem;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card"
+                        style="border-radius: 15px; width: 18rem; min-height: 22rem; background-color: rgb(219, 217, 217);">
+                        <img src="https://www.clubmahindra.com/blog/media/section_images/howtoreach-3fc5b29aeb2ca85.jpg"
+                            class="card-img-top" alt="..."
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        <div class="card-body">
+                            <h4 class="mb-3">Agra, New Delhi Tour</h4>
+                            <p class="form-text"> •Rajghat •Jama Masjid •Red fort •Qutab Minar •Akshardham •India Gate
+                                •Lotus Temple •Taj Mahal •Sikandara •Fatehpur Sikri •Amer Fort</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card"
+                        style="border-radius: 15px; width: 18rem; min-height: 22rem; background-color: rgb(219, 217, 217);">
+                        <img src="https://chaloghumane.com/wp-content/uploads/2021/02/goa.jpg" class="card-img-top"
+                            alt="..." style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        <div class="card-body">
+                            <h4 class="mb-3">Agra, New Delhi Tour</h4>
+                            <p class="form-text"> •Rajghat •Jama Masjid •Red fort •Qutab Minar •Akshardham •India Gate
+                                •Lotus Temple •Taj Mahal •Sikandara •Fatehpur Sikri •Amer Fort</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card"
+                        style="border-radius: 15px; width: 18rem; min-height: 22rem; background-color: rgb(219, 217, 217);">
+                        <img src="https://uploads-ssl.webflow.com/576fd5a8f192527e50a4b95c/5ffc4f2db3a51a1ca82da1e8_places%20to%20visit%20in%20jaipur%20in%20one%20day.jpg"
+                            class="card-img-top" alt="..."
+                            style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        <div class="card-body">
+                            <h4 class="mb-3">Agra, New Delhi Tour</h4>
+                            <p class="form-text"> •Rajghat •Jama Masjid •Red fort •Qutab Minar •Akshardham •India Gate
+                                •Lotus Temple •Taj Mahal •Sikandara •Fatehpur Sikri •Amer Fort</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-center my-4">Our Latest Package</h1>
 
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="grow card" style="border-radius: 15px;">
-                    <img src="https://ak-d.tripcdn.com/images/0a11a12000953ed19A561.png_.webp" alt="..." width="">
+                    <img src="https://ak-d.tripcdn.com/images/0a11a12000953ed19A561.png_.webp" alt="...">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
@@ -147,6 +189,22 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="./parallax.js-1.5.0/parallax.js"></script>
+<script>
+    // const navbar = document.querySelector('#navbar1')
+    // window.addEventListener('scroll', handleScroll);
+    // function handleScroll() {
+    //     if (window.scrollY >= 533) {
+    //         navbar.style.display = 'block'
+    //         navbar.classList.add('fixed-top')
+    //     }
+    //     else {
+    //         navbar.style.display = 'none'
+    //         navbar.classList.remove('fixed-top')
+    //     }
+    // }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
