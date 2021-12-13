@@ -7,9 +7,9 @@
   min-height: 52ch;
 }
 .inner-card h1 {
-  font-family: "Estonia", cursive;
+  /* font-family: "Estonia", cursive; */
   /* color: white; */
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 550;
 }
 /* .inner-card p {
@@ -122,7 +122,7 @@ input:-webkit-autofill:active {
   justify-content: center;
   align-items: center;
 }
-.first-nav{
+.first-nav {
   animation: all 2s ease-in-out;
 }
 #navbar1 {
@@ -138,6 +138,17 @@ input:-webkit-autofill:active {
     display: none;
   }
 }
-.parallax-window{
+.parallax-window {
   background: rgba(80, 80, 80, 0.404);
+}
+.card-body-parallex {
+  width: 18rem;
+  min-height: 22rem;
+  background-color: rgb(219, 217, 217);
+  border-radius: 20px;
+  padding: 0.04rem;
+}
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
