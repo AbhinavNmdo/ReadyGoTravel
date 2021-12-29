@@ -21,7 +21,7 @@ input:-webkit-autofill:active {
   position: relative;
   margin-top: 35px;
   width: auto;
-  height: 200px;
+  height: 190px;
   border-radius: 15px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
@@ -200,9 +200,9 @@ input:-webkit-autofill:active {
     position: relative;
     cursor: pointer;
   }
-  #about{
+  .navigation ul li ul {
     text-align: center;
-    visibility: visible;
+    visibility: hidden;
     position: absolute;
     height: auto;
     background-color: rgb(0, 0, 0);
@@ -210,32 +210,14 @@ input:-webkit-autofill:active {
     left: -110%;
   }
   #foreign{
-    text-align: center;
-    visibility: visible;
-    position: absolute;
-    height: auto;
-    background-color: rgb(0, 0, 0);
-    z-index: 100000;
     left: -25%;
   }
   #domestic{
-    text-align: center;
-    visibility: visible;
-    position: absolute;
-    height: auto;
-    background-color: rgb(0, 0, 0);
-    z-index: 100000;
     left: -18%;
   }
-  /* .navigation ul li ul {
-    text-align: center;
+  .navigation ul li:focus > ul{
     visibility: visible;
-    position: absolute;
-    height: auto;
-    background-color: rgb(0, 0, 0);
-    z-index: 100000;
-    left: -110%;
-  } */
+  }
   .navigation ul li ul li {
     width: 100%;
   }
