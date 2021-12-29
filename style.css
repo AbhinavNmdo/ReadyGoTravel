@@ -1,170 +1,37 @@
-.inner-card {
-  border-radius: 20px;
-  /* border: 1px solid grey; */
-  /* background: #f7f7f7; */
-  background-color: rgb(219, 219, 219);
-  box-shadow: 0 0 1rem 0.05rem;
-  min-height: 52ch;
-}
-.inner-card h1 {
-  /* font-family: "Estonia", cursive; */
-  /* color: white; */
-  font-size: 3.5rem;
-  font-weight: 550;
-}
-/* .inner-card p {
-  color: white;
-} */
 .img {
   border-radius: 10px;
-}
-.trip-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  color: white;
-}
-.form-input {
-  background-color: black;
-  border-radius: 15px;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: white !important;
+  -webkit-text-fill-color: black !important;
 }
-#hello::before {
-  position: absolute;
-  content: "";
-  background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/201810/Railways_Leh_China_Border_Longest_Line.jpeg?blTQl_mQAIZ81hmuB1ISFieFvxqLIpK_&size=1200:675")
-    no-repeat center center/cover;
-  border-radius: 15px;
-  top: 0%;
-  left: 0%;
-}
-.navbar-body {
-  height: 4rem;
-  background: rgb(125, 173, 236);
-  border-radius: 3000px;
-  width: 50rem;
-}
-#navbar {
-  transform: translateY(-50px);
-}
-@media only screen and (max-width: 1400px) {
-  .navbar-body {
-    width: 40rem;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .navbar-body {
-    width: 35rem;
-  }
-}
-@media only screen and (max-width: 800px) {
-  .navbar-body {
-    width: 25rem;
-    height: 3rem;
-  }
-  #navbar {
-    transform: translateY(-40px);
-  }
-}
-.navbar-item {
-  list-style: none;
-}
-.navbar-link {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
-.navbar-link:hover {
-  color: black;
-  font-weight: bolder;
-}
-.vertical {
-  /* border-left: 1px solid rgb(0, 0, 0); */
-  height: auto;
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-@media only screen and (max-width: 800px) {
-  .vertical {
-    margin-top: 1rem;
-    margin-right: 1rem;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .vertical {
-    margin-top: 0px;
-    margin-right: 0px;
-  }
-}
-.grow {
-  overflow: hidden;
-}
-.grow img {
-  transition: all 0.5s ease-in-out;
-  border-radius: 10px;
-}
-.grow img:hover {
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.09);
-  overflow: hidden;
-}
-.header {
-  background-color: rgb(100, 100, 100);
-  border-radius: 400px;
-  min-width: 35ch;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.first-nav {
-  animation: all 2s ease-in-out;
-}
-#navbar1 {
-  display: block;
-  background-color: rgb(54, 54, 54);
-  border-radius: 15px;
-  animation: all 1s ease-in-out;
-}
-@media only screen and (max-width: 765px) {
-  .col-md-3 {
-    display: none;
-  }
-}
+/* -------------------------------- Parallex -------------------------------- */
 .parallax-window {
-  background: rgba(143, 143, 143, 0.226);
+  background-color: rgba(216, 216, 216, 0.144);
 }
-.card-body-parallex {
-  width: 18rem;
-  min-height: 22rem;
-  background-color: rgb(219, 217, 217);
-  border-radius: 20px;
-  padding: 0.04rem;
-}
+/* ------------------------------- Cards Home ------------------------------- */
 .card-img-top {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.cards{
+.cards {
   position: relative;
   margin-top: 35px;
   width: auto;
-  height: 220px;
+  height: 200px;
   border-radius: 15px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   padding: 15px 30px;
   background-color: rgb(255, 255, 255);
 }
-.cards:hover{
+.cards:hover {
   height: 300px;
 }
-.imgBox{
+.imgBox {
   position: relative;
   width: 100%;
   height: 100%;
@@ -172,19 +39,19 @@ input:-webkit-autofill:active {
   z-index: 100;
   text-align: center;
 }
-.imgBox h4{
+.imgBox h4 {
   z-index: 100;
   font-weight: 600;
   text-align: center;
   font-size: 1.6rem;
   margin-top: 1rem;
 }
-.imgBox img{
+.imgBox img {
   width: 100%;
   border-radius: 15px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
 }
-.content{
+.content {
   transform: translateY(-200px);
   opacity: 0;
   transition: 0.3s;
@@ -193,42 +60,183 @@ input:-webkit-autofill:active {
 .cards:hover > .content {
   opacity: 1;
   transform: translateY(-100px);
-
 }
-#contact{
+#contact {
   display: flex;
   justify-content: start;
   align-items: center;
 }
-#social{
+#social {
   display: flex;
   justify-content: end;
   align-items: center;
 }
-#brand{
+#brand {
   display: none;
 }
 @media only screen and (max-width: 1000px) {
-  #contact{
+  #contact {
     display: none;
   }
-  #social{
+  #social {
     justify-content: center;
   }
-  #brand{
+  #brand {
     display: block;
   }
 }
-.dropdown{
-  position: relative;
-  display: none;
+/* ----------------------------- Navigation Bar ----------------------------- */
+.navigation {
+  display: flex;
+  margin: 0%;
+  padding: 0%;
+  align-items: center;
+  justify-content: center;
   background-color: grey;
-  padding: 15px;
-  border-radius: 15px;
+  margin: 0%;
+  border-radius: 16px;
+  height: 50px;
 }
-.dropdown a{
-  display: block;
+.navigation ul {
+  margin: 0%;
+  padding: 0%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex-direction: row;
+  background-color: grey;
+}
+.navigation ul li {
+  position: relative;
+  line-height: 40px;
+}
+.navigation ul li a {
   text-decoration: none;
   color: white;
-  border-bottom: 1px solid black;
+}
+.navigation ul li ul {
+  position: absolute;
+  width: 150px;
+  padding: 10px;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  transform: translateY(-50px);
+  opacity: 0;
+  top: 100%;
+  left: 0%;
+}
+.navigation ul li ul li {
+  line-height: 33px;
+}
+.dropdown-bar:hover > ul {
+  transform: translateY(0px);
+  visibility: visible;
+  opacity: 1;
+}
+#click {
+  display: none;
+}
+.crossPar {
+  display: none;
+}
+.navigation i {
+  display: none;
+}
+.cross {
+  display: none;
+}
+.brand {
+  display: none;
+}
+.active {
+  right: 0%;
+}
+/* ------------------------ Navigation Bar Responsive ----------------------- */
+@media (max-width: 911px) {
+  .crossPar {
+    display: flex;
+    width: 65%;
+    height: 50px;
+    justify-content: end;
+    align-items: flex-start;
+  }
+  .cross {
+    display: inline-block;
+    text-align: end;
+  }
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    align-items: center;
+    position: relative;
+  }
+  .navigation i {
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+  }
+  .navigation .brand {
+    display: inline-flex;
+    color: white;
+    font-weight: 700;
+    font-size: 35px;
+    text-decoration: none;
+  }
+  .navigation ul {
+    position: fixed;
+    width: 100%;
+    top: 0.01px;
+    right: -100%;
+    height: 100vh;
+    flex-direction: column;
+    transition: all 0.5s ease-in-out;
+  }
+  .navigation ul li {
+    line-height: 50px;
+    position: relative;
+    cursor: pointer;
+  }
+  #about{
+    text-align: center;
+    visibility: visible;
+    position: absolute;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    z-index: 100000;
+    left: -110%;
+  }
+  #foreign{
+    text-align: center;
+    visibility: visible;
+    position: absolute;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    z-index: 100000;
+    left: -25%;
+  }
+  #domestic{
+    text-align: center;
+    visibility: visible;
+    position: absolute;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    z-index: 100000;
+    left: -18%;
+  }
+  /* .navigation ul li ul {
+    text-align: center;
+    visibility: visible;
+    position: absolute;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    z-index: 100000;
+    left: -110%;
+  } */
+  .navigation ul li ul li {
+    width: 100%;
+  }
 }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+<style>
+    .menu ul{
+        background-color: rgb(99, 99, 99);
+    }
+    .menu ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        position: relative;
+        height: 100px;
+        margin: 0%;
+        padding: 0%;
+        float: left;
+        width: 100%;
+    }
+    .menu ul a{
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 21px;
+        padding: 0px 15px;
+        color: white;
+        display: block;
+    }
+    .menu ul li {
+        display: inline-flex;
+        position: relative;
+        margin: 0%;
+        padding: 0%;
+    }
+    .menu ul ul{
+        display: none;
+        position: absolute;
+        background-color: violet;
+        top: 100%;
+        padding: 10px;
+        left: 0%;
+        width: 200px;
+    }
+    .menu ul ul li{
+        float: none;
+        width: 200px;
+    }
+    .menu ul ul ul{
+        top: 0px;
+        left: 100%;
+    }
+    .menu ul li:hover > ul{
+        display: block;
+    }
+    .hello{
+        display: block;
+    }
+    input[type=checkbox] ~ div{
+        display: block;
+    }
+    input[type=checkbox]:checked ~ div{
+        display: none;
+    }
+</style>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="#">Aboutus</a></li>
+                    <li><a href="#">Band Details</a></li>
+                    <li>
+                        <a href="#">Certificates</a>
+                        <ul>
+                            <li><a href="#">Hello</a></li>
+                            <li><a href="#">Hello</a></li>
+                            <li><a href="#">Hello</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Services</a>
+                <ul>
+                    <li><a href="#">Services 1</a></li>
+                    <li><a href="#">Services 2</a></li>
+                    <li><a href="#">Services 3</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="hello">
+            hello world
+        </div>
+        <label for="check"><input type="checkbox" id="check" class="check" style="margin-top: 20px;"></label>
+    </nav>
+</body>
+</html>
