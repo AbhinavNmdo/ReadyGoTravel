@@ -8,6 +8,17 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: black !important;
 }
+.main-heading {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+@media (max-width: 770px) {
+  .main-heading {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}
 /* -------------------------------- Parallex -------------------------------- */
 .parallax-window {
   background-color: rgba(216, 216, 216, 0.144);
@@ -28,6 +39,9 @@ input:-webkit-autofill:active {
   padding: 15px 30px;
   background-color: rgb(255, 255, 255);
 }
+.text-none {
+  text-decoration: none;
+}
 .cards:hover {
   height: 300px;
 }
@@ -40,6 +54,8 @@ input:-webkit-autofill:active {
   text-align: center;
 }
 .imgBox h4 {
+  text-decoration: none;
+  color: black;
   z-index: 100;
   font-weight: 600;
   text-align: center;
@@ -92,8 +108,7 @@ input:-webkit-autofill:active {
   padding: 0%;
   align-items: center;
   justify-content: center;
-  background-color: grey;
-  margin: 0%;
+  background-color: rgb(199, 199, 199);
   border-radius: 16px;
   height: 50px;
 }
@@ -106,7 +121,7 @@ input:-webkit-autofill:active {
   align-items: center;
   list-style: none;
   flex-direction: row;
-  background-color: grey;
+  background-color: rgb(199, 199, 199);
 }
 .navigation ul li {
   position: relative;
@@ -114,7 +129,21 @@ input:-webkit-autofill:active {
 }
 .navigation ul li a {
   text-decoration: none;
-  color: white;
+  color: black;
+  font-weight: 600;
+}
+.navigation ul li::after{
+  content: '';
+  position: absolute;
+  background-color: blue;
+  height: 3px;
+  width: 0%;
+  bottom: 15%;
+  left: 0%;
+  transition: 0.3s;
+}
+.navigation ul li:hover::after{
+  width: 100%;
 }
 .navigation ul li ul {
   position: absolute;
@@ -195,7 +224,7 @@ input:-webkit-autofill:active {
     flex-direction: column;
     transition: all 0.5s ease-in-out;
   }
-  .navigation ul li {
+  .navigation ul li{
     line-height: 50px;
     position: relative;
     cursor: pointer;
@@ -209,16 +238,187 @@ input:-webkit-autofill:active {
     z-index: 100000;
     left: -110%;
   }
-  #foreign{
+  #foreign {
     left: -25%;
   }
-  #domestic{
+  #domestic {
     left: -18%;
   }
-  .navigation ul li:focus > ul{
+  .navigation ul li:focus > ul {
     visibility: visible;
   }
   .navigation ul li ul li {
     width: 100%;
   }
+}
+/* ---------------------------------- Tour --------------------------------- */
+/* ---------------------------------- Tour ---------------------------------- */
+.tour-summary {
+  margin-top: 100px;
+}
+.tour-summary ul {
+  color: rgb(65, 65, 65);
+  margin-top: 40px;
+  padding-left: 50px;
+  font-size: 20px;
+}
+.stick {
+  position: sticky;
+  top: 3%;
+}
+.heading {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+.query {
+  text-align: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 1px 1px 15px black;
+}
+.query .button {
+  width: 100%;
+  margin-top: 15px;
+  border: none;
+  background-color: rgb(0, 104, 0);
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  font-size: 25px;
+}
+.query .button:hover {
+  color: white;
+}
+.accordion {
+  padding: 0%;
+  margin-top: 40px;
+  margin-right: 0%;
+  width: 100%;
+}
+.accordion h1 {
+  text-align: left;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+.accordion .contentBx {
+  position: relative;
+  margin: 10px 20px;
+}
+.accordion .contentBx .label {
+  position: relative;
+  padding: 10px;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+.accordion .contentBx .label::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+.accordion .contentBx.active .label::before {
+  content: "-";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+.accordion .contentBx .content-day {
+  position: relative;
+  height: 0px;
+  padding: 0px 10px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  overflow-y: auto;
+}
+.accordion .contentBx.active .content-day {
+  display: flex;
+  height: 150px;
+  text-align: justify;
+  align-items: center;
+}
+
+
+/* ---------------------------------- About --------------------------------- */
+.image{
+  position: sticky;
+  top: 3%;
+}
+.about{
+  margin-top: 50px;
+}
+.about h2{
+  margin: 70px 0px;
+  font-size: 2.1rem;
+  font-weight: 1000;
+}
+.about h4{
+  margin: 55px 0px 25px 0px;
+  font-weight: 600;
+}
+.about h5{
+  margin: 25px 0px 7px 0px;
+  font-weight:600;
+}
+.about ol li span{
+  font-weight: 700;
+}
+.about p span{
+  font-weight: 700;
+}
+.about div{
+  margin: 35px 0px 0px 0px;
+}
+.about-img{
+  position: sticky;
+  top: 5%;
+  margin-top: 110px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.about-img img{
+  border-radius: 15px;
+}
+.about-img h3{
+  text-align: center;
+  margin-top: 10px;
+}
+.about-img h6{
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* --------------------------------- Payment -------------------------------- */
+.payment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.payment h2{
+  font-size: 2.5rem;
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  font-weight: 600;
+}
+.payment ul{
+  margin: 0%;
+  list-style: none;
+  color: black;
+  font-size: 1.5rem;
+}
+.payment li span{
+  font-weight: 700;
 }
