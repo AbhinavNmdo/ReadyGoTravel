@@ -33,7 +33,7 @@ input:-webkit-autofill:active {
   position: relative;
   margin-top: 35px;
   width: auto;
-  height: 190px;
+  height: 215px;
   border-radius: 15px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
@@ -76,7 +76,53 @@ input:-webkit-autofill:active {
 }
 .cards:hover > .content {
   opacity: 1;
-  transform: translateY(-100px);
+  transform: translateY(-80px);
+}
+@media (max-width: 1399px) {
+  .cards{
+    height: 190px;
+  }
+  .cards:hover > .content{
+    transform: translateY(-100px);
+  }
+}
+@media (max-width: 1200px) {
+  .cards{
+    height: 160px;
+  }
+  .cards:hover > .content{
+    transform: translateY(-120px);
+  }
+}
+@media (max-width: 992px) {
+  .cards{
+    height: 120px;
+  }
+  .cards:hover > .content{
+    transform: translateY(-160px);
+  }
+}
+@media (max-width: 768px) {
+  .cards{
+    height: 270px;
+  }
+  .cards:hover {
+    height: 350px;
+  }
+  .cards:hover > .content{
+    transform: translateY(-60px);
+  }
+}
+@media (max-width: 380px) {
+  .cards{
+    height: 200px;
+  }
+  .cards:hover {
+    height: 300px;
+  }
+  .cards:hover > .content{
+    transform: translateY(-100px);
+  }
 }
 #contact {
   display: flex;
