@@ -113,9 +113,20 @@ input:-webkit-autofill:active {
     transform: translateY(-60px);
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   .cards{
     height: 200px;
+  }
+  .cards:hover {
+    height: 300px;
+  }
+  .cards:hover > .content{
+    transform: translateY(-100px);
+  }
+}
+@media (max-width: 340px) {
+  .cards{
+    height: 160px;
   }
   .cards:hover {
     height: 300px;
