@@ -9,10 +9,8 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
-  title = 'readygotravels-angular';
+  active:boolean = false;
   onNavClick(){
-    const nav = document.getElementById('navul');
-    nav?.classList.remove('hidden');
-    nav?.classList.add('flex')
+    this.active = !this.active;
   }
 }
