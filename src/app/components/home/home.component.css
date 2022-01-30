@@ -1,0 +1,8 @@
+.parallax-window2{
+    background-color: rgba(0, 0, 0, 0.384);
+    height: 24rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
