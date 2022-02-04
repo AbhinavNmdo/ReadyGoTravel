@@ -12,5 +12,6 @@ export class AppComponent {
   active:boolean = false;
   onNavClick(){
     this.active = !this.active;
+    const image = document.getElementById('header')
   }
 }

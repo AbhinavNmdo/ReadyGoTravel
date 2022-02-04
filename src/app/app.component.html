@@ -4,7 +4,7 @@
 </head>
 
 <!-- Header Content for contact and social media -->
-<div class="h-10 border border-slate-300">
+<div class="h-10 border border-slate-300 z-50">
     <nav class="h-full grid justify-center items-center grid-cols-12">
         <div class="hidden justify-start ml-10 items-center col-span-12 lg:col-span-8 h-full lg:flex">
             <a target="blank" href="tel:7869966411" class="text-slate-500 font-bold mx-5"><i class="fas fa-phone-alt"></i> +91-7869966411</a>
@@ -27,12 +27,12 @@
 </div>
 
 <!-- Navigation Bar -->
-<nav class="flex justify-center items-center">
+<nav class="flex justify-center items-center z-50">
     <div class="h-10 bg-white w-full rounded-2xl flex lg:hidden justify-between items-center" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
         <h1 class="text-2xl ml-5">ReadyGoTravels</h1>
         <button id="hamburgur" class="text-3xl mr-5 text-gray-500" (click)="onNavClick()"><i class="fas fa-bars"></i></button>
     </div>
-    <ul id="navul" [ngClass]="{'-translate-x-full': !active, 'translate-x-0': active}" class="flex transition-all lg:translate-x-0 duration-300 fixed flex-col h-screen top-0 w-screen bg-white justify-center items-center leading-[4rem] lg:flex-row lg:relative lg:justify-center lg:items-center lg:h-10 lg:w-max lg:rounded-[1rem] lg:leading-3" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+    <ul id="navul" [ngClass]="{'-translate-x-full': !active, 'translate-x-0': active}" class="z-50 flex transition-all lg:translate-x-0 duration-300 fixed flex-col h-screen top-0 w-screen bg-white justify-center items-center leading-[4rem] lg:flex-row lg:relative lg:justify-center lg:items-center lg:h-10 lg:w-max lg:rounded-[1rem] lg:leading-3" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
         <button class="text-right w-full mr-20 lg:hidden text-4xl text-gray-500" (click)="onNavClick()"><i class="fas fa-times"></i></button>
         <li class="mx-6"><a routerLink="/" (click)="onNavClick()">Home</a></li>
         <li class="mx-6"><a routerLink="/about" (click)="onNavClick()">About</a></li>

@@ -1,14 +1,19 @@
 <!-- Hero Section -->
-<div class="parallax-window" style="background-color: rgba(0, 0, 0, 0.397);" data-parallax="scroll" class="h-96 flex justify-center items-center"
+<!-- <div class="parallax-window" style="background-color: rgba(0, 0, 0, 0.397);" data-parallax="scroll" class="h-96 flex justify-center items-center"
     data-image-src="../../assets/front.jpeg">
     <h1 class="text-4xl md:text-5xl lg:text-6xl text-white text-center">Welcome ReadyGo Travels</h1>
+</div> -->
+<div class="h-[25rem] mx-2 rounded-xl mt-1 overflow-hidden">
+    <div class="h-full blur-sm -z-50" style="background: url(../../../assets/front.jpeg) center;"></div>
+    <div class="flex justify-center items-center h-full w-full">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-white text-center -translate-y-[25rem] z-10">Welcome ReadyGo Travels</h1>
+    </div>
 </div>
-
 
 
 <!-- * Advertizement Cards -->
 <h1 class="text-center text-4xl text-slate-800 mt-10">Our Services</h1>
-<div class="grid grid-cols-2 mx-2 md:mx-5 lg:mx-32 gap-3 mt-10 justify-items-center">
+<div class="grid grid-cols-2 mx-2 md:mx-5 lg:mx-32 gap-3 mt-10 justify-items-center z-20">
 
     <!-- Right Align Card -->
     <div
@@ -110,13 +115,12 @@
 
 
 <!-- Water Park booking Advertizement -->
-<div class="flex justify-center items-center mt-14">
-    <div class="w-11/12">
-        <div class="parallax-window2" data-parallax="scroll" data-speed="1" data-image-src="../../assets/ramuji2.jpg">
-            <img src="assets/ramuji-logo.png" alt="ramuji-logo" class="absolute top-0 right-5 w-[80px] lg:w-[100px]"> 
-            <h1 class="text-3xl lg:text-5xl text-center text-white">Booking Available for Ramuji</h1>
-            <h1 class="absolute bottom-2 text-xl font-bold left-2 text-white lg:text-2xl">*Opening shortly</h1>
-        </div>
+<div class="h-[25rem] mx-2 md:mx-5 lg:mx-32 mt-20">
+    <div class="h-full rounded-2xl" style="background: url(../../../assets/ramuji2.jpg) center center/cover;"></div>
+    <div class="h-full w-full relative -translate-y-[25rem] rounded-2xl flex justify-center items-center" style="background-color: rgba(0, 0, 0, 0.404);">
+        <img src="assets/ramuji-logo.png" alt="ramuji-logo" class="absolute top-0 right-5 w-[80px] lg:w-[100px]"> 
+        <h1 class="text-3xl lg:text-5xl text-center text-white">Booking Available for Ramuji</h1>
+        <h1 class="absolute bottom-2 text-xl font-bold left-2 text-white lg:text-2xl">*Opening shortly</h1>
     </div>
 </div>
 
@@ -127,7 +131,7 @@
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
         <div class="flex justify-center items-center -translate-y-11">
             <img src="assets/cards/goa.jpg" alt="goa" class="w-72 rounded-2xl">
         </div>
@@ -144,13 +148,13 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour/goa">Book Now</a></button>
+            <a class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl cursor-pointer" routerLink="/tour-packages/goa">Book Now</a>
         </div>
     </div>
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
         <div class="flex justify-center items-center -translate-y-11">
             <img src="assets/cards/manali.jpg" alt="manali" class="w-72 rounded-2xl">
         </div>
@@ -168,13 +172,13 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour/manali">Book Now</a></button>
+            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/manali">Book Now</a></button>
         </div>
     </div>
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
         <div class="flex justify-center items-center -translate-y-11">
             <img src="assets/cards/somnath.jpg" alt="agra" class="w-72 rounded-2xl">
         </div>
@@ -192,7 +196,7 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour/agra">Book Now</a></button>
+            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/agra">Book Now</a></button>
         </div>
     </div>
 
@@ -206,7 +210,7 @@
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
         <div class="flex justify-center items-center -translate-y-11">
             <img src="assets/cards/dubai.jpg" alt="dubai" class="w-72 rounded-2xl">
         </div>
@@ -223,13 +227,13 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour/dubai">Book Now</a></button>
+            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/dubai">Book Now</a></button>
         </div>
     </div>
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
         <div class="flex justify-center items-center -translate-y-11">
             <img src="assets/cards/london.jpg" alt="london" class="w-72 rounded-2xl">
         </div>
@@ -246,13 +250,13 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour/london">Book Now</a></button>
+            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/london">Book Now</a></button>
         </div>
     </div>
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
         <div class="flex justify-center items-center -translate-y-11">
             <img src="assets/cards/singapore.jpg" alt="Singapore" class="w-72 rounded-2xl">
         </div>
@@ -269,10 +273,10 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour/singapore">Book Now</a></button>
+            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/singapore">Book Now</a></button>
         </div>
     </div>
 
 </div>
 
-<div class="h-96"></div>
+<div class="h-52"></div>

@@ -7,7 +7,12 @@ import { TourComponent } from './components/tour/tour.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'tour/:slug', component: TourComponent}
+  {path: 'tour-packages',
+    children:[
+      {path: '', component: TourComponent},
+      {path: ':slug', component: TourComponent}
+    ]
+  }
 ];
 
 @NgModule({

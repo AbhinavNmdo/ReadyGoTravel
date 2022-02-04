@@ -5,4 +5,11 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: -10;
+}
+.background{
+    background: url(../../../assets/front.jpeg) center center/cover;
+    z-index: -100000;
+    height: 25rem;
+    filter: blur(3px);
 }
