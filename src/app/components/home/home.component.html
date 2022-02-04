@@ -131,72 +131,20 @@
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
-        <div class="flex justify-center items-center -translate-y-11">
-            <img src="assets/cards/goa.jpg" alt="goa" class="w-72 rounded-2xl">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10" *ngFor="let dData of domesticPackages">
+        <div class="flex justify-center items-center -translate-y-11" [ngSwitch]="dData.packageName">
+            <img *ngSwitchCase="'Goa'" src="assets/cards/goa.jpg" alt="goa" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Manali'" src="assets/cards/manali.jpg" alt="goa" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Gujrat Tour'" src="assets/cards/somnath.jpg" alt="goa" class="w-72 rounded-2xl">
         </div>
-        <h1 class="text-2xl text-center -translate-y-7">Goa</h1>
-        <div class="flex justify-center items-center flex-col -translate-y-10 p-4 w-full">
-            <ul class="list-disc pl-5 mt-3 text-slate-600">
-                <li>Sun-kissed beaches in North Goa</li>
-                <li>Unwind under the starlit sky at Vagator Beach</li>
-                <li>Shop at Goa's Night Markets</li>
-                <li>Trip to Old Goa</li>
-                <li>Tour to Panji</li>
-                <li>Boat Cruse on the river Mondovi</li>
-                <li>Sunset at Fort Aguada</li>
+        <h1 class="text-2xl text-center -translate-y-7">{{dData.packageName}}</h1>
+        <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
+            <ul class="list-disc pl-5 mt-3 text-slate-600 text-left">
+                <li *ngFor="let dDesc of dData.description">{{dDesc}}</li>
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
             <a class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl cursor-pointer" routerLink="/tour-packages/goa">Book Now</a>
-        </div>
-    </div>
-
-    <!-- Tour Cards -->
-    <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
-        <div class="flex justify-center items-center -translate-y-11">
-            <img src="assets/cards/manali.jpg" alt="manali" class="w-72 rounded-2xl">
-        </div>
-        <h1 class="text-2xl text-center -translate-y-7">Manali</h1>
-        <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
-            <ul class="list-disc pl-5 mt-3 text-slate-600">
-                <li>Jogni Waterfall</li>
-                <li>Hidimba Devi Temple</li>
-                <li>Bhrigu Lake</li>
-                <li>Jana Waterfall</li>
-                <li>Beas River</li>
-                <li>Solang Vally</li>
-                <li>Manikaran Gurudwara</li>
-                <li>Manu Temple</li>
-            </ul>
-        </div>
-        <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/manali">Book Now</a></button>
-        </div>
-    </div>
-
-    <!-- Tour Cards -->
-    <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
-        <div class="flex justify-center items-center -translate-y-11">
-            <img src="assets/cards/somnath.jpg" alt="agra" class="w-72 rounded-2xl">
-        </div>
-        <h1 class="text-2xl text-center -translate-y-7">Gujrat Tour</h1>
-        <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
-            <ul class="list-disc pl-5 mt-3 text-slate-600">
-                <li>Somnath Temple</li>
-                <li>Gir National Park</li>
-                <li>Dwarkadhish Temple</li>
-                <li>Bet Dwarka</li>
-                <li>Nageshwar Jyotirlinga</li>
-                <li>Rukmani Devi Temple</li>
-                <li>ISCON Temple</li>
-                <li>Swaminarayan Mandir</li>
-            </ul>
-        </div>
-        <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/agra">Book Now</a></button>
         </div>
     </div>
 
@@ -210,70 +158,20 @@
 
     <!-- Tour Cards -->
     <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
-        <div class="flex justify-center items-center -translate-y-11">
-            <img src="assets/cards/dubai.jpg" alt="dubai" class="w-72 rounded-2xl">
+        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10" *ngFor="let fData of foreignPackages">
+        <div class="flex justify-center items-center -translate-y-11" [ngSwitch]="fData.packageName">
+            <img *ngSwitchCase="'Dubai'" src="assets/cards/dubai.jpg" alt="dubai" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'London'" src="assets/cards/london.jpg" alt="dubai" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Singapore'" src="assets/cards/singapore.jpg" alt="dubai" class="w-72 rounded-2xl">
         </div>
-        <h1 class="text-2xl text-center -translate-y-7">Dubai</h1>
+        <h1 class="text-2xl text-center -translate-y-7">{{fData.packageName}}</h1>
         <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
             <ul class="list-disc pl-5 mt-3 text-slate-600">
-                <li>Burj Khalifa</li>
-                <li>Burj al Arab</li>
-                <li>Jumeirah Beach</li>
-                <li>Mall Of The Emirates</li>
-                <li>Desart Safari</li>
-                <li>Dubai Marina</li>
-                <li>The Palm Islands</li>
+                <li *ngFor="let fdesc of fData.description">{{fdesc}}</li>
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
             <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/dubai">Book Now</a></button>
-        </div>
-    </div>
-
-    <!-- Tour Cards -->
-    <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
-        <div class="flex justify-center items-center -translate-y-11">
-            <img src="assets/cards/london.jpg" alt="london" class="w-72 rounded-2xl">
-        </div>
-        <h1 class="text-2xl text-center -translate-y-7">London</h1>
-        <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
-            <ul class="list-disc pl-5 mt-3 text-slate-600">
-                <li>The London Eye</li>
-                <li>Warner Brothers Studio</li>
-                <li>Hop-on hop-off bus tour</li>
-                <li>Madame Tussauds Musium</li>
-                <li>SEALIFE London Aquarium</li>
-                <li>Buckingham Palace, Big Ben</li>
-                <li>British Museum</li>
-            </ul>
-        </div>
-        <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/london">Book Now</a></button>
-        </div>
-    </div>
-
-    <!-- Tour Cards -->
-    <div
-        class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10">
-        <div class="flex justify-center items-center -translate-y-11">
-            <img src="assets/cards/singapore.jpg" alt="Singapore" class="w-72 rounded-2xl">
-        </div>
-        <h1 class="text-2xl text-center -translate-y-7">Singapore</h1>
-        <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
-            <ul class="list-disc pl-5 mt-3 text-slate-600">
-                <li>Marina Bay Sands</li>
-                <li>Gardens by the Bay</li>
-                <li>Singapore Flyer</li>
-                <li>Chinatown</li>
-                <li>Sentosa Island</li>
-                <li>Universal Studios Singapore</li>
-                <li>Merlion Park</li>
-            </ul>
-        </div>
-        <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/singapore">Book Now</a></button>
         </div>
     </div>
 
