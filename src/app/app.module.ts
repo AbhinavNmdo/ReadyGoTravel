@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { TourComponent } from './components/tour/tour.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -21,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(()=>initializeApp(environment.firebase)),
+    provideFirestore(()=>getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
