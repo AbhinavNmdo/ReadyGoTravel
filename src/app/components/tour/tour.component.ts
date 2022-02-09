@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToursService } from 'src/app/services/fetchTours/tours.service';
+
+interface queryInterface {
+  name: string,
+  phone: string,
+  packageName: string,
+  email: string,
+}
 
 @Component({
   selector: 'app-tour',
@@ -8,12 +16,34 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TourComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute) {}
-  
-  id:string|null = "";
-  ngOnInit(): void {
-    console.log(this.route.snapshot.paramMap.get('slug'))
+  id:any = "";
+  packageData:any;
+
+  constructor(private route:ActivatedRoute, private tourData:ToursService, private router:Router) {
     this.id = this.route.snapshot.paramMap.get('slug')
+    if(this.router.url.startsWith('/domestic')){
+      this.tourData.getSingleDomesticTour(this.id).subscribe((data)=>{
+        this.packageData = data
+      })
+    }
+    else if(this.router.url.startsWith('/foreign')){
+      this.tourData.getSingleForeignTour(this.id).subscribe((data)=>{
+        this.packageData = data
+      })
+    }
   }
+
+  sendQuery(data:queryInterface){
+    const query = {
+      name: data.name,
+      phone: data.phone,
+      packageName: this.packageData.packageName,
+      email: data.email
+    }
+    this.tourData.postQuery(query);
+  }
+  
+  
+  ngOnInit(): void {}
 
 }

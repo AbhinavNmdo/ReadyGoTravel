@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',

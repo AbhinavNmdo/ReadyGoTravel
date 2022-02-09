@@ -7,7 +7,13 @@ import { TourComponent } from './components/tour/tour.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'tour-packages',
+  {path: 'domestic-tour-packages',
+    children:[
+      {path: '', component: TourComponent},
+      {path: ':slug', component: TourComponent}
+    ]
+  },
+  {path: 'foreign-tour-packages',
     children:[
       {path: '', component: TourComponent},
       {path: ':slug', component: TourComponent}

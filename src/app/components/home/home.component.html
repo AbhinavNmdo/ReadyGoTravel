@@ -133,9 +133,9 @@
     <div
         class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10" *ngFor="let dData of domesticPackages">
         <div class="flex justify-center items-center -translate-y-11" [ngSwitch]="dData.packageName">
-            <img *ngSwitchCase="'Goa'" src="assets/cards/goa.jpg" alt="goa" class="w-72 rounded-2xl">
-            <img *ngSwitchCase="'Manali'" src="assets/cards/manali.jpg" alt="goa" class="w-72 rounded-2xl">
-            <img *ngSwitchCase="'Gujrat Tour'" src="assets/cards/somnath.jpg" alt="goa" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Goa'" src="assets/cards/goa.jpg" alt="Goa" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Manali'" src="assets/cards/manali.jpg" alt="Manali" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Gujrat Tour'" src="assets/cards/somnath.jpg" alt="Somnath" class="w-72 rounded-2xl">
         </div>
         <h1 class="text-2xl text-center -translate-y-7">{{dData.packageName}}</h1>
         <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
@@ -144,7 +144,7 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <a class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl cursor-pointer" routerLink="/tour-packages/goa">Book Now</a>
+            <a class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl cursor-pointer" routerLink='/domestic-tour-packages/{{dData.id}}'>Book Now</a>
         </div>
     </div>
 
@@ -160,9 +160,9 @@
     <div
         class="flex justify-center items-center flex-col shadow-3xl hover:shadow-4xl transition-shadow duration-300 translate-y-20 rounded-xl mb-16 max-w-[25rem] lg:max-w-none w-full z-10" *ngFor="let fData of foreignPackages">
         <div class="flex justify-center items-center -translate-y-11" [ngSwitch]="fData.packageName">
-            <img *ngSwitchCase="'Dubai'" src="assets/cards/dubai.jpg" alt="dubai" class="w-72 rounded-2xl">
-            <img *ngSwitchCase="'London'" src="assets/cards/london.jpg" alt="dubai" class="w-72 rounded-2xl">
-            <img *ngSwitchCase="'Singapore'" src="assets/cards/singapore.jpg" alt="dubai" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Dubai'" src="assets/cards/dubai.jpg" alt="Dubai" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'London'" src="assets/cards/london.jpg" alt="London" class="w-72 rounded-2xl">
+            <img *ngSwitchCase="'Singapore'" src="assets/cards/singapore.jpg" alt="Singapore" class="w-72 rounded-2xl">
         </div>
         <h1 class="text-2xl text-center -translate-y-7">{{fData.packageName}}</h1>
         <div class="flex justify-center items-start flex-col -translate-y-10 p-4 w-full">
@@ -171,7 +171,7 @@
             </ul>
         </div>
         <div class="flex justify-between items-center -translate-y-8">
-            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/tour-packages/dubai">Book Now</a></button>
+            <button class="rounded-2xl bg-blue-600 text-white p-3 hover:shadow-3xl"><a routerLink="/foreign-tour-packages/{{fData.id}}">Book Now</a></button>
         </div>
     </div>
 

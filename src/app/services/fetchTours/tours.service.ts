@@ -18,7 +18,7 @@ export class ToursService {
 
   domesticUrl:string = "https://readygotravels-default-rtdb.firebaseio.com/domesticTours.json";
   foreignUrl:string = "https://readygotravels-default-rtdb.firebaseio.com/foreignTours.json";
-  constructor(private http:HttpClient, private firestore:Firestore) {}
+  constructor(private firestore:Firestore, private http:HttpClient) {}
 
   // For Domestic Tours
   getDomesticTour(){
@@ -73,5 +73,12 @@ export class ToursService {
   postForeignTour(tour:any){
     const collRef = collection(this.firestore, "foreignTours");
     return addDoc(collRef, tour)
+  }
+
+
+  // Sending Query
+  postQuery(data:any){
+    const collRef = collection(this.firestore, "queries");
+    return addDoc(collRef, data);
   }
 }

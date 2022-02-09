@@ -1,1 +1,61 @@
-<h1>tour works! {{id}}</h1>
+<!-- Hero Section -->
+<div class="h-[25rem] mx-2 rounded-xl mt-1 overflow-hidden">
+    <div class="h-full blur-sm -z-50" style="background: url(../../../assets/front.jpeg) center;"></div>
+    <div class="flex justify-center items-center h-full w-full">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-white text-center -translate-y-[25rem] z-10">{{packageData.packageName}} Package</h1>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-9 mx-2 sm:mx-4 md:mx-7 lg:mx-24 mt-10 md:gap-3 justify-items-center">
+
+    <div class="col-span-6">
+
+        <div class="flex justify-center items-start flex-col bg-white shadow-3xl p-2 rounded-2xl my-3">
+            <h1 class="text-3xl my-3 font-bold">Something About {{packageData.packageName}}</h1>
+            <p class="ml-3 text-xl">{{packageData.about}}</p>
+        </div>
+
+        <div class="flex justify-center items-start flex-col bg-white shadow-3xl p-2 rounded-2xl my-3">
+            <h1 class="text-3xl my-3 font-bold">Attractions</h1>
+            <ul class="ml-3 text-xl">
+                <li *ngFor="let desc of packageData.description">{{desc}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="col-span-3">
+        <div class="flex justify-center items-center bg-white shadow-3xl rounded-2xl sticky top-6 h-max flex-col p-4 my-2 max-w-sm">
+            <h1 class="text-xl font-bold">Send Query for this Package</h1>
+            <form #queryForm="ngForm" (ngSubmit)="sendQuery(queryForm.value)">
+
+                <div class="flex justify-center items-start flex-col w-full mt-5">
+                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Full Name:</label>
+                    <input ngModel type="text" name="name" id="name" placeholder="Full Name" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg">
+                </div>
+    
+                <div class="flex justify-center items-start flex-col w-full mt-5">
+                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Email:</label>
+                    <input ngModel type="email" name="email" id="email" placeholder="Email Address" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg">
+                </div>
+    
+                <div class="flex justify-center items-start flex-col w-full mt-5">
+                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Phone:</label>
+                    <input ngModel type="text" name="phone" id="phone" placeholder="Phone Number" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg">
+                </div>
+    
+                <div class="flex justify-center items-start flex-col w-full mt-5">
+                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Tell Your Query:</label>
+                    <textarea ngModel type="text" name="phone" id="phone" placeholder="Your Query" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg"></textarea>
+                </div>
+    
+                <div class="flex justify-center items-center flex-col w-full mt-5">
+                    <button type="submit" class="p-4 text-center w-1/2 bg-green-500 rounded-2xl text-white ring-offset-2 ring-green-300 active:ring">Send Query</button>
+                </div>
+
+            </form>
+            
+        </div>
+    </div>
+
+</div>
