@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faLocationArrow, faEnvelope, faBars, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
@@ -27,11 +27,21 @@ export class AppComponent {
 
 
   active:boolean = false;
-  toggleNav(){
+  navFix:boolean =false;
+  subNav:boolean = false;
+  @HostListener('window:scroll', ['$event'])
+  navbarFix(){
+    if(window.pageYOffset > 95){
+      this.navFix = true;
+    }
+    else if(window.pageYOffset < 95){
+      this.navFix = false;
+    }
+  }
+  toggleSubNav():void{
+    this.subNav = !this.subNav;
+  }
+  toggleNav():void{
     this.active = !this.active;
   }
-  onNavClick(){
-    this.active = !this.active;
-    const image = document.getElementById('header')
-  };
 };
