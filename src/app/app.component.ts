@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faLocationArrow, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faLocationArrow, faEnvelope, faBars, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -20,6 +20,9 @@ export class AppComponent {
   // Solid Icons
   faPhone = faPhone;
   faLocationArrow = faLocationArrow;
+  faBars = faBars;
+  faEllipsisV = faEllipsisV
+
 
 
 

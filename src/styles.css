@@ -2,6 +2,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: Poppins;
+    src: url(./fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: Dancing-Script;
+    src: url(./fonts/DancingScript-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald;
+    src: url(./fonts/Oswald-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Ubuntu;
+    src: url(./fonts/UbuntuMono-Regular.ttf);
+}
+@font-face {
+    font-family: Barlow;
+    src: url(./fonts/BarlowCondensed-Regular.ttf);
+}
 *{
     font-family: 'Poppins';
 }
