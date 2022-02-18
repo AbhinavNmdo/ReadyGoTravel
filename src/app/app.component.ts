@@ -27,6 +27,9 @@ export class AppComponent {
 
 
   active:boolean = false;
+  toggleNav(){
+    this.active = !this.active;
+  }
   onNavClick(){
     this.active = !this.active;
     const image = document.getElementById('header')

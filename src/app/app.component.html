@@ -3,19 +3,23 @@
     <script src="https://kit.fontawesome.com/5830fbc3ae.js" crossorigin="anonymous"></script>
 </head>
 
-<div class="relative">
+<div class="relative z-50">
 
     <!-- Responsive Navbar -->
-    <div class="h-12 hidden nav-max-md:flex">
-        <div class="flex justify-center items-center h-full">
+    <div class="h-12 hidden nav-max-md:flex px-10 max-sm:px-2 shadow-3xl">
+        <div class="flex justify-between items-center h-full flex-row w-full">
             <div class="flex justify-start items-center h-full">
-                <fa-icon [icon]="faBars"></fa-icon>
+                <button class="px-2 flex justify-center items-center rounded-lg shadow-3xl m-2 focus:ring ring-orange-400" (click)="toggleNav()"><fa-icon [icon]="faBars" class="text-slate-700 text-2xl"></fa-icon></button>
+                <h1 class="pl-10 text-3xl max-sm:text-xl max-sm:pl-1 text-slate-700"><span class="text-orange-400">ReadyGo</span> Travels</h1>
+            </div>
+            <div class="pr-5">
+                <button><fa-icon [icon]="faEllipsisV" class="text-slate-700 text-2xl"></fa-icon></button>
             </div>
         </div>
     </div>
 
     <!-- Header Content for contact and social media -->
-    <div class="h-24">
+    <div class="h-24 hidden nav-md:block">
         <div class="grid grid-cols-12 h-full justify-items-center">
 
             <!-- ReadyGo Logo -->
@@ -50,19 +54,19 @@
 
 
     <!-- Navigation Bar -->
-    <nav class="h-12">
-        <div class="h-full bg-slate-100 flex justify-center items-center flex-row gap-16">
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">Home</a>
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">About</a>
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">Cab Booking</a>
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">Domestic Tours</a>
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">Flight Booking</a>
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">Foreign Tours</a>
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">Rail Booking</a>
-            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600">Contact</a>
+    <nav class="h-12 nav-max-md:h-screen absolute w-full transition-all duration-200" [ngClass]="{'animate-[open_0.5s_ease-in-out]': active, 'animate-[close_0.5s_ease-in-out]': !active, 'flex': active, 'invisible': !active}">
+        <div data-nav class="h-full nav-max-md:h-screen bg-slate-100 flex justify-center items-center nav-max-md:items-start nav-max-md:justify-start flex-row gap-16 nav-max-md:flex-col nav-max-md:gap-0 nav-max-md:w-52 nav-max-md:bg-white nav-max-md:pt-7">
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">Home</a>
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">About</a>
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">Cab Booking</a>
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">Domestic Tours</a>
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">Flight Booking</a>
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">Foreign Tours</a>
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">Rail Booking</a>
+            <a routerLink="/" class="font-[Oswald] font-thin text-slate-600 nav-max-md:py-3 pl-8 border-b nav-max-md:w-full">Contact</a>
         </div>
     </nav>
 </div>
 
 
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
