@@ -82,7 +82,7 @@
     <div class="flex justify-center h-32 w-full items-center flex-col md:flex-row absolute top-0 left-0 md:gap-5">
         <h1 data-aos="fade-left" class="font-sans text-white text-lg md:text-2xl">We Provide Only the <span class="font-bold">Best Tours</span></h1>
         <!-- Best Tour Button -->
-        <a data-aos="fade-right" routerLink="/" class="md:p-3 p-2 text-sm border-2 border-orange-400 text-white rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest max-md:mt-5 ">FIND YOUR BEST TOUR</a>
+        <a data-aos="fade-right" routerLink="/" class="md:p-3 p-2 text-sm border-2 border-orange-400 text-white rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest max-md:mt-5 max-xsm:hidden">FIND YOUR BEST TOUR</a>
     </div>
 </div>
 
@@ -90,10 +90,29 @@
 <!-- Tours Section -->
 <h1 class="text-center text-3xl font-bold mt-20 max-sm:text-2xl">Our Best Tours</h1>
 <p class="text-center text-slate-400 mx-5 max-sm:text-sm sm:mx-8 md:mx-32 lg:mx-[20%] text-base mt-5">Discovery Tour provides a variety of great tours to travelers throughout the world. We offer top deals at affordable prices and we can create the most unforgettable holiday for you!</p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10 justify-items-center">
 
     <!-- Tour Cards -->
-    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+    <!-- <div *ngFor="let data of foreignPackages" data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(data.packageName)" (mouseout)="hoverMe(null)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="assets/cards/goa.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===data.packageName}">
+        </div>
+        <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
+            <fa-icon [icon]="faWifi"></fa-icon>
+            <fa-icon [icon]="faHotel"></fa-icon>
+            <fa-icon [icon]="faCar"></fa-icon>
+            <fa-icon [icon]="faUtensils"></fa-icon>
+        </div>
+        <div class="flex justify-center items-start px-4 flex-col">
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">{{data.packageName}}</h1>
+        </div>
+        <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
+            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From 4,000 Rs. per person.</h1>
+        </div>
+    </div> -->
+
+    <!-- Tour Cards -->
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
         <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
             <img src="assets/cards/goa.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
@@ -112,7 +131,7 @@
     </div>
 
     <!-- Tour Cards -->
-    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
         <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
             <img src="assets/cards/somnath.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
@@ -131,7 +150,7 @@
     </div>
 
     <!-- Tour Cards -->
-    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
         <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
             <img src="assets/cards/london.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
@@ -150,7 +169,7 @@
     </div>
 
     <!-- Tour Cards -->
-    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
         <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
             <img src="assets/cards/manali.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
@@ -169,7 +188,7 @@
     </div>
 
     <!-- Tour Cards -->
-    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
         <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
             <img src="assets/cards/dubai.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
@@ -188,7 +207,7 @@
     </div>
 
     <!-- Tour Cards -->
-    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(hell)" (mouseout)="hoverMe(hell)">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(hell)" (mouseout)="hoverMe(hell)">
         <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
             <img src="assets/cards/singapore.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
@@ -207,3 +226,18 @@
     </div>
 
 </div>
+
+
+<!-- Second Parallax Content -->
+<div class="h-96 overflow-hidden relative mt-14 max-sm:hidden">
+    <img parallax [parallaxConfig]="{scale: 1.2}" src="assets/parallax-img-2.jpg" alt="parallax" class="object-cover absolute">
+    <div class="flex justify-center items-center absolute top-0 left-0 h-96 w-full flex-col">
+        <h1 data-aos="fade-down" class="text-center text-lg md:text-4xl text-white font-sans">Buy a Tour Without</h1>
+        <h1 data-aos="fade-down" data-aos-delay="150" class="text-center text-lg md:text-4xl text-white font-bold mt-4">Leaving Your Home</h1>
+        <p data-aos="fade-down" data-aos-delay="150" class="text-white text-sm md:text-base font-thin mt-4 px-5 sm:px-8 md:px-16 lg:px-80">Using our website, you can easily find and book any tour you want. Mobile users will definitely enjoy our app available on all devices.</p>
+        <!-- Best Tour Button -->
+        <a data-aos="fade-down" data-aos-delay="250" routerLink="/" class="md:p-3 p-2 text-sm border-2 border-orange-400 text-white rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest mt-4 ">FIND YOUR BEST TOUR</a>
+    </div>
+</div>
+
+<div class="h-80"></div>

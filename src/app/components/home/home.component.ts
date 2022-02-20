@@ -54,13 +54,15 @@ export class HomeComponent implements OnInit {
   }
 
   @ViewChild('hell') hell:any;
-  cardHover:boolean = false;
+  cardHover:any;
   hoverMe(data:any){
+    // this.cardHover = data;
   }
 
   ngOnInit(): void {
     AOS.init({
-      duration: 600
+      duration: 800,
+      offset: 150,
     });
   }
 }
