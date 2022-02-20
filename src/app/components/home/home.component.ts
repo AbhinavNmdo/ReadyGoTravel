@@ -41,9 +41,11 @@ export class HomeComponent implements OnInit {
   constructor(private tourData:ToursService) {
     this.tourData.getDomesticTour().subscribe((data)=>{
       this.domesticPackages = data;
+      console.log('Domestic ', data)
     });
     this.tourData.getForeignTour().subscribe((data)=>{
       this.foreignPackages = data;
+      console.log('Foreign ', data)
     })
     // this.tourData.getSingleDomesticTour('cjkOEDPxMR0u9g5LGLMl').subscribe((data)=>{
     //   console.log(data);
