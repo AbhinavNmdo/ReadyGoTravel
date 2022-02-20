@@ -76,15 +76,26 @@
 </div>
 
 
+<!-- Parallax Content -->
+<div class="h-32 mt-14 overflow-hidden relative">
+    <img parallax src="assets/parallax-img.jpg" [parallaxConfig]="{scale: 1.5}" class="" alt="image">
+    <div class="flex justify-center h-32 w-full items-center flex-col md:flex-row absolute top-0 left-0 md:gap-5">
+        <h1 data-aos="fade-left" class="font-sans text-white text-lg md:text-2xl">We Provide Only the <span class="font-bold">Best Tours</span></h1>
+        <!-- Best Tour Button -->
+        <a data-aos="fade-right" routerLink="/" class="md:p-3 p-2 text-sm border-2 border-orange-400 text-white rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest max-md:mt-5 ">FIND YOUR BEST TOUR</a>
+    </div>
+</div>
+
+
 <!-- Tours Section -->
-<h1 class="text-center text-3xl font-bold mt-28 max-sm:text-2xl">Our Best Tours</h1>
+<h1 class="text-center text-3xl font-bold mt-20 max-sm:text-2xl">Our Best Tours</h1>
 <p class="text-center text-slate-400 mx-5 max-sm:text-sm sm:mx-8 md:mx-32 lg:mx-[20%] text-base mt-5">Discovery Tour provides a variety of great tours to travelers throughout the world. We offer top deals at affordable prices and we can create the most unforgettable holiday for you!</p>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10">
 
     <!-- Tour Cards -->
-    <div class="flex justify-center items-center flex-col w-full bg-white shadow-3xl rounded-2xl h-fit">
-        <div class="w-[85%] mt-7">
-            <img src="assets/cards/goa.jpg" alt="goa" class="w-full object-cover rounded-2xl">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="assets/cards/goa.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
         <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
             <fa-icon [icon]="faWifi"></fa-icon>
@@ -93,16 +104,7 @@
             <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
         <div class="flex justify-center items-start px-4 flex-col">
-            <h1 class="text-center mx-auto text-3xl">Goa</h1>
-            <ul class="flex justify-center items-start text-slate-500 px-8 pt-3 flex-col list-disc">
-                <li>Sun-kissed beaches in North Goa</li>
-                <li>Unwind under the starlit sky at Vagator Beach</li>
-                <li>Shop at Goa's Night Markets</li>
-                <li>Trip to Old Goa</li>
-                <li>Tour to Panji</li>
-                <li>Boat Cruse on the river Mondovi</li>
-                <li>Sunset at Fort Aguada</li>
-            </ul>
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">Goa</h1>
         </div>
         <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
             <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From 4,000 Rs. per person.</h1>
@@ -110,9 +112,9 @@
     </div>
 
     <!-- Tour Cards -->
-    <div class="flex justify-center items-center flex-col w-full bg-white shadow-3xl rounded-2xl h-fit">
-        <div class="w-[85%] mt-7">
-            <img src="assets/cards/manali.jpg" alt="goa" class="w-full object-cover rounded-2xl">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="assets/cards/somnath.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
         <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
             <fa-icon [icon]="faWifi"></fa-icon>
@@ -121,16 +123,7 @@
             <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
         <div class="flex justify-center items-start px-4 flex-col">
-            <h1 class="text-center mx-auto text-3xl">Goa</h1>
-            <ul class="flex justify-center items-start text-slate-500 px-8 pt-3 flex-col list-disc">
-                <li>Sun-kissed beaches in North Goa</li>
-                <li>Unwind under the starlit sky at Vagator Beach</li>
-                <li>Shop at Goa's Night Markets</li>
-                <li>Trip to Old Goa</li>
-                <li>Tour to Panji</li>
-                <li>Boat Cruse on the river Mondovi</li>
-                <li>Sunset at Fort Aguada</li>
-            </ul>
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">Gujrat Tour</h1>
         </div>
         <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
             <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From 4,000 Rs. per person.</h1>
@@ -138,9 +131,9 @@
     </div>
 
     <!-- Tour Cards -->
-    <div class="flex justify-center items-center flex-col w-full bg-white shadow-3xl rounded-2xl h-fit">
-        <div class="w-[85%] mt-7">
-            <img src="assets/cards/somnath.jpg" alt="goa" class="w-full object-cover rounded-2xl">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="assets/cards/london.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
         <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
             <fa-icon [icon]="faWifi"></fa-icon>
@@ -149,16 +142,7 @@
             <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
         <div class="flex justify-center items-start px-4 flex-col">
-            <h1 class="text-center mx-auto text-3xl">Goa</h1>
-            <ul class="flex justify-center items-start text-slate-500 px-8 pt-3 flex-col list-disc">
-                <li>Sun-kissed beaches in North Goa</li>
-                <li>Unwind under the starlit sky at Vagator Beach</li>
-                <li>Shop at Goa's Night Markets</li>
-                <li>Trip to Old Goa</li>
-                <li>Tour to Panji</li>
-                <li>Boat Cruse on the river Mondovi</li>
-                <li>Sunset at Fort Aguada</li>
-            </ul>
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">London</h1>
         </div>
         <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
             <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From 4,000 Rs. per person.</h1>
@@ -166,9 +150,9 @@
     </div>
 
     <!-- Tour Cards -->
-    <div class="flex justify-center items-center flex-col w-full bg-white shadow-3xl rounded-2xl h-fit">
-        <div class="w-[85%] mt-7">
-            <img src="assets/cards/singapore.jpg" alt="goa" class="w-full object-cover rounded-2xl">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="assets/cards/manali.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
         <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
             <fa-icon [icon]="faWifi"></fa-icon>
@@ -177,16 +161,7 @@
             <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
         <div class="flex justify-center items-start px-4 flex-col">
-            <h1 class="text-center mx-auto text-3xl">Goa</h1>
-            <ul class="flex justify-center items-start text-slate-500 px-8 pt-3 flex-col list-disc">
-                <li>Sun-kissed beaches in North Goa</li>
-                <li>Unwind under the starlit sky at Vagator Beach</li>
-                <li>Shop at Goa's Night Markets</li>
-                <li>Trip to Old Goa</li>
-                <li>Tour to Panji</li>
-                <li>Boat Cruse on the river Mondovi</li>
-                <li>Sunset at Fort Aguada</li>
-            </ul>
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">Manali</h1>
         </div>
         <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
             <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From 4,000 Rs. per person.</h1>
@@ -194,9 +169,9 @@
     </div>
 
     <!-- Tour Cards -->
-    <div class="flex justify-center items-center flex-col w-full bg-white shadow-3xl rounded-2xl h-fit">
-        <div class="w-[85%] mt-7">
-            <img src="assets/cards/dubai.jpg" alt="goa" class="w-full object-cover rounded-2xl">
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(true)" (mouseout)="hoverMe(false)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="assets/cards/dubai.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
         </div>
         <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
             <fa-icon [icon]="faWifi"></fa-icon>
@@ -205,16 +180,26 @@
             <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
         <div class="flex justify-center items-start px-4 flex-col">
-            <h1 class="text-center mx-auto text-3xl">Goa</h1>
-            <ul class="flex justify-center items-start text-slate-500 px-8 pt-3 flex-col list-disc">
-                <li>Sun-kissed beaches in North Goa</li>
-                <li>Unwind under the starlit sky at Vagator Beach</li>
-                <li>Shop at Goa's Night Markets</li>
-                <li>Trip to Old Goa</li>
-                <li>Tour to Panji</li>
-                <li>Boat Cruse on the river Mondovi</li>
-                <li>Sunset at Fort Aguada</li>
-            </ul>
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">Dubai</h1>
+        </div>
+        <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
+            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From 4,000 Rs. per person.</h1>
+        </div>
+    </div>
+
+    <!-- Tour Cards -->
+    <div data-aos="fade-right" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white" (mouseover)="hoverMe(hell)" (mouseout)="hoverMe(hell)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="assets/cards/singapore.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover}">
+        </div>
+        <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
+            <fa-icon [icon]="faWifi"></fa-icon>
+            <fa-icon [icon]="faHotel"></fa-icon>
+            <fa-icon [icon]="faCar"></fa-icon>
+            <fa-icon [icon]="faUtensils"></fa-icon>
+        </div>
+        <div class="flex justify-center items-start px-4 flex-col">
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">Singapore</h1>
         </div>
         <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
             <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From 4,000 Rs. per person.</h1>

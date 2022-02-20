@@ -12,7 +12,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { NgxSimpleParallaxJsModule } from 'ngx-simple-parallax-js';
 
 
 @NgModule({
@@ -30,6 +30,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     provideFirestore(()=>getFirestore()),
     FormsModule,
     FontAwesomeModule,
+    NgxSimpleParallaxJsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

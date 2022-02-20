@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
 import { environment } from 'src/environments/environment';
 import * as AOS from 'aos';
@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
     });
     this.tourData.getForeignTour().subscribe((data)=>{
       this.foreignPackages = data;
-      console.log(data);
     })
     // this.tourData.getSingleDomesticTour('cjkOEDPxMR0u9g5LGLMl').subscribe((data)=>{
     //   console.log(data);
@@ -54,7 +53,10 @@ export class HomeComponent implements OnInit {
     // this.tourData.postDomesticTour(this.tour);
   }
 
+  @ViewChild('hell') hell:any;
   cardHover:boolean = false;
+  hoverMe(data:any){
+  }
 
   ngOnInit(): void {
     AOS.init({

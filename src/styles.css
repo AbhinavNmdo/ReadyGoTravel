@@ -22,8 +22,25 @@
     font-family: Barlow;
     src: url(./fonts/BarlowCondensed-Regular.ttf);
 }
+@font-face {
+    font-family: KaushanScript;
+    src: url(./fonts/KaushanScript-Regular.ttf);
+}
 *{
     font-family: 'Poppins';
+}
+::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(255, 255, 255, 0.61);
+    padding: 13px;
+}
+::-webkit-scrollbar-track{
+    padding: 13px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgb(196, 191, 191);
+    transform: translateX(-10px);
 }
 @keyframes open {
     0% {transform: translateX(-100%);}
