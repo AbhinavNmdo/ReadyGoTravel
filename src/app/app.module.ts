@@ -13,6 +13,8 @@ import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxSimpleParallaxJsModule } from 'ngx-simple-parallax-js';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { NgxSimpleParallaxJsModule } from 'ngx-simple-parallax-js';
     AppComponent,
     HomeComponent,
     TourComponent,
-    AboutComponent
+    AboutComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
