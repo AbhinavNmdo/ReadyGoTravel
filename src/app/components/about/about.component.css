@@ -1,0 +1,4 @@
+@keyframes fadeup {
+    from {transform: translateY(2rem);}
+    to {transform: translateY(0rem);}
+}

@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
 import { environment } from 'src/environments/environment';
 import * as AOS from 'aos';
-import {faPaperPlane} from '@fortawesome/free-regular-svg-icons';
-import {faPlane, faHotel, faBook, faCar, faPassport, faTrain, faWifi, faUtensils} from '@fortawesome/free-solid-svg-icons';
+import {faEnvelope, faPaperPlane} from '@fortawesome/free-regular-svg-icons';
+import {faPlane, faHotel, faBook, faCar, faPassport, faTrain, faWifi, faUtensils, faPhone, faLocationArrow} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
   faTrain = faTrain;
   faWifi = faWifi;
   faUtensils = faUtensils;
+  faPhone = faPhone;
+  faLocationArrow = faLocationArrow;
+  faEnvelope = faEnvelope;
 
   domesticPackages:any;
   foreignPackages:any;
