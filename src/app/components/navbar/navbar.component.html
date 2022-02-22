@@ -55,15 +55,15 @@
 
     <!-- Navigation Bar -->
     <nav class="h-12 nav-max-md:h-screen nav-max-md:fixed w-full transition-all duration-200 nav-md:flex" [ngClass]="{'nav-max-md:animate-[open_0.5s_ease-in-out]': active, 'nav-max-md:animate-[close_0.5s_ease-in-out]': !active, 'nav-max-md:flex': active, 'nav-max-md:invisible': !active}">
-        <div class="h-full nav-max-md:h-screen bg-slate-100 flex justify-center items-center nav-max-md:items-start nav-max-md:justify-start flex-row gap-10 nav-max-md:flex-col nav-max-md:gap-0 nav-max-md:w-52 nav-max-md:bg-white nav-max-md:pt-7 nav-md:h-12 nav-md:w-full nav-md:top-0 nav-max-md:fixed" (scroll)="navbarFix()" [ngClass]="{'nav-md:fixed': navFix, 'bg-white': navFix}">
-            <a routerLink="/" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">Home</a>
-            <a routerLink="/about" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">About</a>
-            <a routerLink="/" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">Cab Booking</a>
-            <a routerLink="/" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">Domestic Tours</a>
-            <a routerLink="/" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">Flight Booking</a>
-            <a routerLink="/" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">Foreign Tours</a>
-            <a routerLink="/" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">Rail Booking</a>
-            <a routerLink="/contact" class="font-[Oswald] text-slate-800 nav-max-md:py-3 pl-8 nav-max-md:border-b nav-max-md:w-full">Contact</a>
+        <div class="h-full nav-max-md:h-screen bg-slate-100 flex justify-center items-center nav-max-md:items-start nav-max-md:justify-start flex-row nav-max-md:flex-col nav-max-md:gap-0 nav-max-md:w-52 nav-max-md:bg-white nav-max-md:pt-7 nav-md:h-12 nav-md:w-full nav-md:top-0 nav-max-md:fixed nav-md:justify-items-center" (scroll)="navbarFix()" [ngClass]="{'nav-md:fixed': navFix, 'bg-white': navFix}">
+            <a routerLink="/" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">Home</a>
+            <a routerLink="/about" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">About</a>
+            <a routerLink="/" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">Cab Booking</a>
+            <a routerLink="/" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">Domestic Tours</a>
+            <a routerLink="/" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">Flight Booking</a>
+            <a routerLink="/" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">Foreign Tours</a>
+            <a routerLink="/" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">Rail Booking</a>
+            <a routerLink="/contact" class="font-[Oswald] align pt-[0.7rem] nav-md:hover:border-b-orange-400 nav-md:hover:border-b-4 text-slate-800 nav-max-md:py-3 nav-max-md:pl-8 nav-md:h-full nav-md:px-7 nav-max-md:border-b nav-max-md:w-full">Contact</a>
         </div>
     </nav>
 </div>
