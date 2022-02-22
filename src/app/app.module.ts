@@ -16,6 +16,7 @@ import { NgxSimpleParallaxJsModule } from 'ngx-simple-parallax-js';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     NavbarComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
