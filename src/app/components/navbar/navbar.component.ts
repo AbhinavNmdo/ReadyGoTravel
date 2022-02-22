@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faLocationArrow, faEnvelope, faBars, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,7 +10,16 @@ import { faPhone, faLocationArrow, faEnvelope, faBars, faEllipsisV } from '@fort
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  slug:string = '';
+  activeNav(){
+    setTimeout(() => {
+      this.slug =  window.location.href;
+      console.log(this.slug ,this.slug.endsWith('/'))
+    }, 100);
+  }
+  constructor() {
+    this.activeNav();
+  }
   // Brands Icons
   faFacebook = faFacebook;
   faInstagram = faInstagram;
@@ -46,5 +56,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }
