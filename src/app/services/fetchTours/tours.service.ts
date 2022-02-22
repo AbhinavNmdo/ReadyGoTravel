@@ -77,8 +77,13 @@ export class ToursService {
 
 
   // Sending Query
-  postQuery(data:any){
-    const collRef = collection(this.firestore, "queries");
+  postHomeQuery(data:any){
+    const collRef = collection(this.firestore, "homeQuery");
+    return addDoc(collRef, data);
+  }
+
+  postTourQuery(data:any){
+    const collRef = collection(this.firestore, "tourQuery");
     return addDoc(collRef, data);
   }
 }

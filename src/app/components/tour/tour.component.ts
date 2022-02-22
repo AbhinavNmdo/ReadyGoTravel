@@ -40,7 +40,7 @@ export class TourComponent implements OnInit {
       packageName: this.packageData.packageName,
       email: data.email
     }
-    this.tourData.postQuery(query);
+    this.tourData.postTourQuery(query);
   }
   
   

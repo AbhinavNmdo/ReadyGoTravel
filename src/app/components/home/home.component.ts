@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
-import { environment } from 'src/environments/environment';
 import * as AOS from 'aos';
 import {faEnvelope, faPaperPlane} from '@fortawesome/free-regular-svg-icons';
 import {faPlane, faHotel, faBook, faCar, faPassport, faTrain, faWifi, faUtensils, faPhone, faLocationArrow} from '@fortawesome/free-solid-svg-icons';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -58,10 +58,23 @@ export class HomeComponent implements OnInit {
     // this.tourData.postDomesticTour(this.tour);
   }
 
-  @ViewChild('hell') hell:any;
   cardHover:any;
+  query:any;
   hoverMe(data:any){
-    // this.cardHover = data;
+    this.cardHover = data;
+  }
+  
+  contactHome(data:any){
+    const query:object = {
+      idField: data.firstname,
+      firstName: data.firstname,
+      lastName: data.lastname,
+      email: data.email,
+      phone: data.phone,
+      query: data.query
+    }
+    this.tourData.postHomeQuery(query);
+    console.log(query);
   }
 
   ngOnInit(): void {
@@ -70,4 +83,5 @@ export class HomeComponent implements OnInit {
       offset: 150,
     });
   }
+
 }
