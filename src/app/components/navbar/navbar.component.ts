@@ -57,5 +57,24 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // To Close all popups like navbar and header content
+  id(e:any){
+    console.log(e.target.id)
+    if(e.target.id === 'header' || e.target.id === 'navbar'){
+      console.log(false);
+      return false;
+    }
+    else{
+      console.log(true);
+      return true;
+    }
+  }
+  closeAll(e:any){
+    if(this.id(e)){
+      this.active = false;
+      this.subNav = false;
+    }
+  }
+
 
 }
