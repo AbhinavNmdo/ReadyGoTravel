@@ -1,22 +1,22 @@
 <!-- Contact Us Section -->
 <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-2 px-5 sm:px-8 md:px-16 lg:px-32 pt-10 relative bg-slate-200 pb-28">
-    
+
     <!-- Cloud -->
-    <img src="assets/cloud.png" alt="Clouds" class="absolute max-sm:-bottom-3 -bottom-7 object-cover left-0 w-full">
+    <img src="assets/cloud.png" alt="Clouds" class="absolute max-sm:-bottom-3 -bottom-7 object-cover left-0 w-full overflow-hidden">
     
     <!-- Contact Part -->
-    <form class="flex justify-center items-center flex-col col-span-7 gap-8">
+    <form #homeContact="ngForm" (ngSubmit)="contact(homeContact.value)" class="flex justify-center items-center flex-col col-span-7 gap-8">
         <h1 class="text-left text-2xl md:text-4xl text-slate-600 my-7 mr-auto"><span class="text-orange-400">Contact</span> Us</h1>
         <!-- Firstname and Lastname -->
         <div class="flex flex-row justify-center items-center gap-4 max-sm:flex-wrap">
             <div class="w-full">
                 <label for="firstname" class="text-slate-600">First Name</label>
-                <input type="text" id="firstname" name="firstname"
+                <input [value]="inputValue" ngModel type="text" id="firstname" name="firstname"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
             <div class="w-full">
                 <label for="lastname" class="text-slate-600">Last Name</label>
-                <input type="text" id="lastname" name="lastname"
+                <input [value]="inputValue" ngModel type="text" id="lastname" name="lastname"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
         </div>
@@ -25,12 +25,12 @@
         <div class="flex flex-row justify-center items-center gap-4 max-sm:flex-wrap w-full">
             <div class="w-full">
                 <label for="email" class="text-slate-600">E-mail</label>
-                <input type="text" id="email" name="email"
+                <input [value]="inputValue" ngModel type="text" id="email" name="email"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
             <div class="w-full">
                 <label for="phone" class="text-slate-600">Phone</label>
-                <input type="text" id="phone" name="phone"
+                <input [value]="inputValue" ngModel type="text" id="phone" name="phone"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
         </div>
@@ -39,16 +39,22 @@
         <div class="flex flex-row justify-center items-center w-full">
             <div class="w-full">
                 <label for="query" class="text-slate-600">Your Query</label>
-                <textarea id="query" name="query" cols="100" rows="2" type="text"
+                <textarea [value]="inputValue" ngModel id="query" name="query" cols="100" rows="2" type="text"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full"></textarea>
             </div>
         </div>
 
         <!-- Send Button -->
-        <div class="flex flex-row justify-start items-center w-full gap-5">
+        <div class="flex flex-row justify-between items-center w-full flex-wrap h-max">
             <button type="submit"
-                class="p-2 text-lg px-8 border-2 border-orange-400 text-[#122e44] rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest pb-3">Send
-                Query</button>
+                class="p-2 text-lg px-8 border-2 border-orange-400 text-[#122e44] rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest pb-3">Send Query</button>
+            <div class="h-full w-fit flex justify-center items-center">
+
+                <h1 [ngClass]="{'hidden': completed!=='success'}" class="text-green-700 both-md:pb-0 max-lg:pb-5">Your Query has been Sent Successfully</h1>
+
+                <h1 [ngClass]="{'hidden': completed!=='failed'}" class="text-red-700 both-md:pb-0 max-lg:pb-5">Can't Send Query Because of internal problem</h1>
+
+            </div>
         </div>
     </form>
 
