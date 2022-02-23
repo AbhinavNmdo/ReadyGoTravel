@@ -2,7 +2,7 @@
 <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-2 px-5 sm:px-8 md:px-16 lg:px-32 pt-10 relative bg-slate-200 pb-28">
     
     <!-- Cloud -->
-    <img src="assets/cloud.png" alt="Clouds" class="absolute -bottom-7 object-cover left-0 w-full">
+    <img src="assets/cloud.png" alt="Clouds" class="absolute max-sm:-bottom-3 -bottom-7 object-cover left-0 w-full">
     
     <!-- Contact Part -->
     <form class="flex justify-center items-center flex-col col-span-7 gap-8">
@@ -67,8 +67,10 @@
     <!-- Phone Detail -->
     <div class="flex justify-center items-center max-md:border-b md:border-l flex-col col-span-1 gap-4 w-full h-32">
         <fa-icon [icon]="faPhone" class="rotate-90 text-orange-400 text-2xl"></fa-icon>
-        <a href="tel:7869966411" class="text-slate-800 font-sans font-extralight hover:text-orange-400 transition-colors duration-150">+91-7869966411</a>
-        <a href="tel:9424627524" class="text-slate-600 font-sans font-extralight hover:text-orange-400 transition-colors duration-150">+91-9424627524</a>
+        <div class="flex justify-center items-center flex-col">
+            <a href="tel:7869966411" class="text-slate-800 font-sans font-extralight hover:text-orange-400 transition-colors duration-150">+91-7869966411</a>
+            <a href="tel:9424627524" class="text-slate-600 font-sans font-extralight hover:text-orange-400 transition-colors duration-150">+91-9424627524</a>
+        </div>
     </div>
 
     <!-- Email Detail -->
