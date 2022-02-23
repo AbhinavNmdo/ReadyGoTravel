@@ -11,7 +11,7 @@
 
 
 <!-- Services Content Section -->
-<div class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 mt-10 -translate-y-1 gap-10 justify-items-center">
+<div class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 mt-10 -translate-y-1 gap-10 justify-items-center overflow-hidden">
 
     <div class="flex justify-center items-start max-w-sm md:max-w-none">
         <div class="w-10 h-full flex justify-start items-start">
@@ -90,7 +90,7 @@
 <!-- Tours Section -->
 <h1 class="text-center text-3xl font-bold mt-20 max-sm:text-2xl">Our Best Tours</h1>
 <p class="text-center text-slate-400 mx-5 max-sm:text-sm sm:mx-8 md:mx-32 lg:mx-[20%] text-base mt-5">Discovery Tour provides a variety of great tours to travelers throughout the world. We offer top deals at affordable prices and we can create the most unforgettable holiday for you!</p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10 justify-items-center">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10 justify-items-center overflow-hidden">
 
     <!-- Tour Cards -->
     <!-- Domestic Tours -->
@@ -139,14 +139,12 @@
 
 
 <!-- Second Parallax Content -->
-<div class="h-96 overflow-hidden relative mt-14 max-sm:hidden">
-    <img parallax [parallaxConfig]="{scale: 1.5}" src="assets/parallax-img-2.jpg" alt="parallax" class="object-cover absolute">
-    <div class="flex justify-center items-center absolute top-0 left-0 h-96 w-full flex-col">
-        <h1 data-aos="fade-down" class="text-center text-lg md:text-4xl text-white font-sans">Buy a Tour Without</h1>
-        <h1 data-aos="fade-down" data-aos-delay="150" class="text-center text-lg md:text-4xl text-white font-bold mt-4">Leaving Your Home</h1>
-        <p data-aos="fade-down" data-aos-delay="150" class="text-white text-sm md:text-base font-thin mt-4 px-5 sm:px-8 md:px-16 lg:px-80 text-center">Using our website, you can easily find and book any tour you want. Mobile users will definitely enjoy our app available on all devices.</p>
+<div class="h-96 overflow-hidden relative mt-14 before:content-[''] before:bg-[url('assets/ramuji2.jpg')] before:absolute before:top-0 before:left-0 before:h-96 before:w-full before:bg-no-repeat before:bg-cover before:bg-center">
+    <div class="flex justify-center items-center absolute top-0 left-0 h-96 w-full flex-col bg-[#00000071]">
+        <h1 data-aos="fade-down" class="text-center text-lg md:text-2xl text-white font-sans">Opening Shortly</h1>
+        <h1 data-aos="fade-down" data-aos-delay="150" class="text-center text-4xl md:text-6xl text-white font-bold mt-1 mb-1 font-[Dancing-Script]">Ramuji Water Park</h1>
         <!-- Best Tour Button -->
-        <a data-aos="fade-down" data-aos-delay="250" routerLink="/" class="md:p-3 p-2 text-sm border-2 border-orange-400 text-white rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest mt-4 ">FIND YOUR BEST TOUR</a>
+        <p data-aos="fade-down" data-aos-delay="250" class="md:p-3 p-2 text-xl border-2 border-orange-400 text-white rounded-xl font-bold transition-all duration-300 font-[Oswald] tracking-widest mt-4 pb-5 max-md:pb-3 max-sm:text-sm">Booking should be Available Here.</p>
     </div>
 </div>
 
@@ -155,7 +153,7 @@
 <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-2 px-5 sm:px-8 md:px-16 lg:px-32 pt-10 relative bg-slate-200 pb-28">
 
     <!-- Cloud -->
-    <img src="assets/cloud.png" alt="Clouds" class="absolute -bottom-7 object-cover left-0 w-full overflow-visible">
+    <img src="assets/cloud.png" alt="Clouds" class="absolute max-sm:-bottom-3 -bottom-7 object-cover left-0 w-full overflow-hidden">
     
     <!-- Contact Part -->
     <form #homeContact="ngForm" (ngSubmit)="contactHome(homeContact.value)" class="flex justify-center items-center flex-col col-span-7 gap-8">

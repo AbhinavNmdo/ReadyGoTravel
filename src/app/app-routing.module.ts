@@ -9,18 +9,9 @@ import { PaymentComponent } from './components/payment/payment.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'domestic-tour-packages',
-    children:[
-      {path: '', component: TourComponent},
-      {path: ':slug', component: TourComponent}
-    ]
-  },
-  {path: 'foreign-tour-packages',
-    children:[
-      {path: '', component: TourComponent},
-      {path: ':slug', component: TourComponent}
-    ]
-  },
+  {path: 'tours', children:[
+    {path: '', component: TourComponent},
+  ]},
   {path: 'contact', component: ContactComponent},
   {path: 'payments', component: PaymentComponent},
 ];

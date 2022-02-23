@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
+import { faCar, faHotel, faSlash, faUtensils, faWifi } from '@fortawesome/free-solid-svg-icons';
+import * as AOS from 'aos';
 
 interface queryInterface {
   name: string,
@@ -15,35 +17,36 @@ interface queryInterface {
   styleUrls: ['./tour.component.css']
 })
 export class TourComponent implements OnInit {
+  // Icons
+  faSlash = faSlash;
+  faHotel = faHotel;
+  faWifi = faWifi;
+  faCar = faCar;
+  faUtensils = faUtensils;
 
-  id:any = "";
-  packageData:any;
 
-  constructor(private route:ActivatedRoute, private tourData:ToursService, private router:Router) {
-    this.id = this.route.snapshot.paramMap.get('slug')
-    if(this.router.url.startsWith('/domestic')){
-      this.tourData.getSingleDomesticTour(this.id).subscribe((data)=>{
-        this.packageData = data
-      })
-    }
-    else if(this.router.url.startsWith('/foreign')){
-      this.tourData.getSingleForeignTour(this.id).subscribe((data)=>{
-        this.packageData = data
-      })
-    }
+  // Variables for storing data
+  domesticPackages:any;
+  foreignPackages:any;
+  constructor(private tourData:ToursService) {
+    this.tourData.getDomesticTour().subscribe((data)=>{
+      this.domesticPackages = data;
+    });
+    this.tourData.getForeignTour().subscribe((data)=>{
+      this.foreignPackages = data;
+    })
   }
 
-  sendQuery(data:queryInterface){
-    const query = {
-      name: data.name,
-      phone: data.phone,
-      packageName: this.packageData.packageName,
-      email: data.email
-    }
-    this.tourData.postTourQuery(query);
+  ngOnInit(): void {
+    AOS.init({
+      duration: 800,
+      offset: 150,
+    });
   }
-  
-  
-  ngOnInit(): void {}
+
+  cardHover:any;
+  hoverMe(data:any){
+    this.cardHover = data;
+  }
 
 }

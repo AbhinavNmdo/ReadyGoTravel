@@ -1,60 +1,60 @@
 <!-- Hero Section -->
-<div class="h-[25rem] mx-2 rounded-xl mt-1 overflow-hidden">
-    <div class="h-full blur-sm -z-50" style="background: url(../../../assets/front.jpeg) center;"></div>
-    <div class="flex justify-center items-center h-full w-full">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl text-white text-center -translate-y-[25rem] z-10">{{packageData.packageName}} Package</h1>
+<div class="h-[12rem] md:h-[20rem] lg:h-[20rem] relative w-full flex justify-start items-center bg-[url('assets/hero-section.jpg')] bg-cover bg-bottom bg-no-repeat before:content-[''] before:bg-[url('assets/cloud.png')] before:absolute before:-bottom-[5.5rem] before:left-0 before:w-full before:h-[20rem] before:bg-no-repeat before:bg-bottom before:overflow-visible">
+    <div class="flex flex-col justify-center items-start pl-4 md:pl-20 overflow-hidden">
+        <h1 data-aos="fade-down" data-aos-offset="0" class="text-white text-5xl max-sm:text-2xl max-md:text-4xl max-sm:text-center font-bold md:mt-5">Tour Packages</h1>
+        <div data-aos="fade-down" data-aos-delay="250" data-aos-offset="0" class="flex flex-row justify-center items-center mt-2 gap-3 text-xl">
+            <fa-icon  class="text-white -rotate-[38deg]" [icon]="faSlash"></fa-icon>
+            <h1 class="text-white">ReadyGo Travels</h1>
+        </div>
     </div>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-9 mx-2 sm:mx-4 md:mx-7 lg:mx-24 mt-10 md:gap-3 justify-items-center">
 
-    <div class="col-span-6">
+<!-- Tours Section -->
+<h1 class="text-center text-3xl font-bold mt-10 max-sm:text-2xl -translate-y-1">Our Best Tours</h1>
+<p class="text-center text-slate-400 mx-5 max-sm:text-sm sm:mx-8 md:mx-32 lg:mx-[20%] text-base mt-5 -translate-y-1">Discovery Tour provides a variety of great tours to travelers throughout the world. We offer top deals at affordable prices and we can create the most unforgettable holiday for you!</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10 justify-items-center -translate-y-1 overflow-hidden">
 
-        <div class="flex justify-center items-start flex-col bg-white shadow-3xl p-2 rounded-2xl my-3">
-            <h1 class="text-3xl my-3 font-bold">Something About {{packageData.packageName}}</h1>
-            <p class="ml-3 text-xl">{{packageData.about}}</p>
+    <!-- Tour Cards -->
+    <!-- Domestic Tours -->
+    <div data-aos="fade-right" *ngFor="let domestic of domesticPackages" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(domestic.packageName)" (mouseout)="hoverMe(null)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden" [ngSwitch]="domestic.id">
+            <img *ngSwitchCase="'goa'" src="assets/cards/goa.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===domestic.packageName}">
+            <img *ngSwitchCase="'manali'" src="assets/cards/manali.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===domestic.packageName}">
+            <img *ngSwitchCase="'gujrat'" src="assets/cards/somnath.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===domestic.packageName}">
         </div>
-
-        <div class="flex justify-center items-start flex-col bg-white shadow-3xl p-2 rounded-2xl my-3">
-            <h1 class="text-3xl my-3 font-bold">Attractions</h1>
-            <ul class="ml-3 text-xl">
-                <li *ngFor="let desc of packageData.description">{{desc}}</li>
-            </ul>
+        <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
+            <fa-icon [icon]="faWifi"></fa-icon>
+            <fa-icon [icon]="faHotel"></fa-icon>
+            <fa-icon [icon]="faCar"></fa-icon>
+            <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
-
+        <div class="flex justify-center items-start px-4 flex-col">
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">{{domestic.packageName}}</h1>
+        </div>
+        <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
+            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From {{domestic.startingPrice}} Rs. per person.</h1>
+        </div>
     </div>
 
-    <div class="col-span-3">
-        <div class="flex justify-center items-center bg-white shadow-3xl rounded-2xl sticky top-6 h-max flex-col p-4 my-2 max-w-sm">
-            <h1 class="text-xl font-bold">Send Query for this Package</h1>
-            <form #queryForm="ngForm" (ngSubmit)="sendQuery(queryForm.value)">
-
-                <div class="flex justify-center items-start flex-col w-full mt-5">
-                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Full Name:</label>
-                    <input ngModel type="text" name="name" id="name" placeholder="Full Name" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg">
-                </div>
-    
-                <div class="flex justify-center items-start flex-col w-full mt-5">
-                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Email:</label>
-                    <input ngModel type="email" name="email" id="email" placeholder="Email Address" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg">
-                </div>
-    
-                <div class="flex justify-center items-start flex-col w-full mt-5">
-                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Phone:</label>
-                    <input ngModel type="text" name="phone" id="phone" placeholder="Phone Number" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg">
-                </div>
-    
-                <div class="flex justify-center items-start flex-col w-full mt-5">
-                    <label for="first-name" class="block text-sm text-left font-medium text-gray-700">Tell Your Query:</label>
-                    <textarea ngModel type="text" name="phone" id="phone" placeholder="Your Query" class="mt-1 py-2 pl-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-[1px] border-gray-300 rounded-lg"></textarea>
-                </div>
-    
-                <div class="flex justify-center items-center flex-col w-full mt-5">
-                    <button type="submit" class="p-4 text-center w-1/2 bg-green-500 rounded-2xl text-white ring-offset-2 ring-green-300 active:ring">Send Query</button>
-                </div>
-
-            </form>
-            
+    <!-- Foreign Tours -->
+    <div data-aos="fade-right" *ngFor="let foreign of foreignPackages" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(foreign.packageName)" (mouseout)="hoverMe(null)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden" [ngSwitch]="foreign.id">
+            <img *ngSwitchCase="'dubai'" src="assets/cards/dubai.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===foreign.packageName}">
+            <img *ngSwitchCase="'london'" src="assets/cards/london.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===foreign.packageName}">
+            <img *ngSwitchCase="'singapore'" src="assets/cards/singapore.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===foreign.packageName}">
+        </div>
+        <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
+            <fa-icon [icon]="faWifi"></fa-icon>
+            <fa-icon [icon]="faHotel"></fa-icon>
+            <fa-icon [icon]="faCar"></fa-icon>
+            <fa-icon [icon]="faUtensils"></fa-icon>
+        </div>
+        <div class="flex justify-center items-start px-4 flex-col">
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">{{foreign.packageName}}</h1>
+        </div>
+        <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
+            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From {{foreign.startingPrice}} Rs. per person.</h1>
         </div>
     </div>
 
