@@ -20,6 +20,8 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     NavbarComponent,
     FooterComponent,
     ContactComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

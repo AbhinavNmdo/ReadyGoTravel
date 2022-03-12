@@ -14,7 +14,6 @@ export class NavbarComponent implements OnInit {
   activeNav(){
     setTimeout(() => {
       this.slug =  window.location.href;
-      console.log(this.slug ,this.slug.endsWith('/'))
     }, 100);
   }
   constructor() {
@@ -59,13 +58,10 @@ export class NavbarComponent implements OnInit {
 
   // To Close all popups like navbar and header content
   id(e:any){
-    console.log(e.target.id)
     if(e.target.id === 'header' || e.target.id === 'navbar'){
-      console.log(false);
       return false;
     }
     else{
-      console.log(true);
       return true;
     }
   }

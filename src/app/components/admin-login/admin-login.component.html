@@ -1,0 +1,20 @@
+<div class="flex justify-center items-center w-full flex-col mt-10">
+    <h1 class="text-3xl">Admin Login</h1>
+    <form #adminForm="ngForm" (ngSubmit)="adminLogin(adminForm.value)">
+        <!-- Username section -->
+        <div class="flex flex-col justify-center items-center w-full mt-8">
+                <label for="username" class="text-slate-600 mr-auto max-sm:ml-4">Username:</label>
+                <input [value]="nullValue" ngModel id="username" name="username" type="text" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full max-sm:w-[90%]"/>
+        </div>
+        <!-- Password section -->
+        <div class="flex flex-col justify-center items-center w-full mt-8">
+                <label for="password" class="text-slate-600 mr-auto max-sm:ml-4">Password:</label>
+                <input [value]="nullValue" ngModel id="password" name="password" type="password" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full max-sm:w-[90%]"/>
+        </div>
+        <!-- Send Button -->
+        <div class="flex flex-row justify-center items-center w-full flex-wrap h-max mt-8">
+            <button type="submit"
+                class="p-2 text-base px-8 border-2 border-orange-400 text-[#122e44] rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest pb-3">Login Now</button>
+        </div>
+    </form>
+</div>

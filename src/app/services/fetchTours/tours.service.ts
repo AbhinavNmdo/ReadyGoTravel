@@ -32,21 +32,6 @@ export class ToursService {
     return docData(collRef, {idField: 'id'}) as Observable<Tours>;
   }
 
-  updateDomesticTour(active:boolean, id:string){
-    const collRef = doc(this.firestore, `domesticTours/${id}`)
-    return updateDoc(collRef, {active: active});
-  }
-
-  deleteDomesticTour(id:string){
-    const collRef = doc(this.firestore, `domesticTours/${id}`);
-    return deleteDoc(collRef)
-  }
-
-  postDomesticTour(tour:any){
-    const collRef = collection(this.firestore, "domesticTours");
-    return addDoc(collRef, tour)
-  }
-
 
   // For Foreign Tours
   getForeignTour(){
@@ -58,6 +43,60 @@ export class ToursService {
   getSingleForeignTour(id:string){
     const collRef = doc(this.firestore, `foreignTours/${id}`);
     return docData(collRef, {idField: 'id'}) as Observable<Tours>;
+  }
+
+
+  // Sending Query
+  postHomeQuery(data:any){
+    const collRef = collection(this.firestore, "homeQuery");
+    return addDoc(collRef, data);
+  }
+
+  postTourQuery(data:any){
+    const collRef = collection(this.firestore, "tourQuery");
+    return addDoc(collRef, data);
+  }
+
+
+  // For Admin
+  getAdminDetail(){
+    const collRef = doc(this.firestore, `admin/bM6uuAzBGGWhQ5pKGp3K`);
+    return docData(collRef, {idField: 'id'}) as Observable<Tours[]>;
+  }
+
+  deleteAdminHomeQuery(id:any){
+    const collRef = doc(this.firestore, `homeQuery/${id}`);
+    return deleteDoc(collRef);
+  }
+
+  deleteAdminTourQuery(id:any){
+    const collRef = doc(this.firestore, `tourQuery/${id}`);
+    return deleteDoc(collRef);
+  }
+
+  getAdminHomeQuery(){
+    const collRef = collection(this.firestore, 'homeQuery');
+    return collectionData(collRef, {idField: 'id'});
+  }
+
+  getAdminTourQuery(){
+    const collRef = collection(this.firestore, 'tourQuery');
+    return collectionData(collRef, {idField: 'id'});
+  }
+
+  updateAdminDomesticTour(active:boolean, id:string){
+    const collRef = doc(this.firestore, `domesticTours/${id}`)
+    return updateDoc(collRef, {active: active});
+  }
+
+  deleteAdminDomesticTour(id:string){
+    const collRef = doc(this.firestore, `domesticTours/${id}`);
+    return deleteDoc(collRef)
+  }
+
+  postAdminDomesticTour(tour:any){
+    const collRef = collection(this.firestore, "domesticTours");
+    return addDoc(collRef, tour)
   }
 
   updateForeignTour(active:boolean, id:string){
@@ -73,17 +112,5 @@ export class ToursService {
   postForeignTour(tour:any){
     const collRef = collection(this.firestore, "foreignTours");
     return addDoc(collRef, tour)
-  }
-
-
-  // Sending Query
-  postHomeQuery(data:any){
-    const collRef = collection(this.firestore, "homeQuery");
-    return addDoc(collRef, data);
-  }
-
-  postTourQuery(data:any){
-    const collRef = collection(this.firestore, "tourQuery");
-    return addDoc(collRef, data);
   }
 }
