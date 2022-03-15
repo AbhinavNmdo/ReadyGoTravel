@@ -23,12 +23,6 @@ export class AppComponent {
   faBars = faBars;
   faEllipsisV = faEllipsisV
 
-  adminPage:boolean = false;
-  constructor(){
-    if(window.location.href.endsWith('YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh')){
-      this.adminPage=true;
-    }
-  }
 
 
   active:boolean = false;
