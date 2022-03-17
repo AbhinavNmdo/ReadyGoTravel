@@ -5,8 +5,9 @@ import { AboutComponent } from './components/about/about.component';
 import { TourComponent } from './components/tour/tour.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PaymentComponent } from './components/payment/payment.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminComponent } from './components/admin/admin/admin.component';
+import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
+import { ReviewQueryComponent } from './components/admin/review-query/review-query.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'payments', component: PaymentComponent},
   {path: 'admin', children:[
     {path: '', component: AdminLoginComponent},
-    {path: 'YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh', component: AdminComponent}
+    {path: 'YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh', component: AdminComponent},
+    {path: 'YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh/reviewQuery', component: ReviewQueryComponent},
   ]},
 ];
 

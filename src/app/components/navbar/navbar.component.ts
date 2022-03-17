@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faLocationArrow, faEnvelope, faBars, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,12 +11,17 @@ import { faPhone, faLocationArrow, faEnvelope, faBars, faEllipsisV } from '@fort
 export class NavbarComponent implements OnInit {
 
   slug:string = '';
+  hidden:boolean = false;
   activeNav(){
     setTimeout(() => {
       this.slug =  window.location.href;
+      const split  = window.location.href.split('/');
+      if(split[3] === 'admin'){
+        this.hidden = true;
+      }
     }, 100);
   }
-  constructor() {
+  constructor(private router:Router) {
     this.activeNav();
   }
   // Brands Icons

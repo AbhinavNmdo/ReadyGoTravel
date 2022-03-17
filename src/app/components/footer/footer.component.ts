@@ -13,7 +13,18 @@ export class FooterComponent implements OnInit {
   faFacebookMessenger = faFacebookMessenger;
   faLinkedin = faLinkedin;
 
-  constructor() { }
+  hidden:boolean = false;
+  activeNav(){
+    setTimeout(() => {
+      const split  = window.location.href.split('/');
+      if(split[3] === 'admin'){
+        this.hidden = true;
+      }
+    }, 100);
+  }
+  constructor() {
+    this.activeNav();
+  }
 
   ngOnInit(): void {
   }
