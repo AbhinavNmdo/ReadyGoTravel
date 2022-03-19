@@ -25,15 +25,25 @@ export class ContactComponent implements OnInit {
   // Contact Form Implimentation
   completed:string = 'none';
   inputValue:any;
+  date = new Date();
+
   contact(data:any){
     this.loadingbar.start();
+    var ISTTime = new Date(this.date.getTime()+(330*60*1000));
+    const today = ISTTime.getDate();
+    const month = ISTTime.getMonth()+1;
+    const year = ISTTime.getFullYear();
+    const hour = ISTTime.getHours();
+    const minutes = ISTTime.getMinutes();
+    console.log(month)
     const query:object = {
-      idField: data.firstname,
       firstName: data.firstname,
       lastName: data.lastname,
       email: data.email,
       phone: data.phone,
-      query: data.query
+      query: data.query,
+      status: 'new',
+      date: today+'/'+month+'/'+year+', '+ hour+':'+minutes
     }
     try {
       this.tourData.postHomeQuery(query).then(()=>{

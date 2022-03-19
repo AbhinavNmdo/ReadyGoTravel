@@ -19,8 +19,10 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
-import { AdminRoutingModule } from './components/admin/admin-routing.module';
-import { AdminModule } from './components/admin/admin.module';
+import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
+import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
+import { PostToursComponent } from './components/admin/post-tours/post-tours.component';
+import { ReviewQueryComponent } from './components/admin/review-query/review-query.component';
 
 
 @NgModule({
@@ -32,7 +34,11 @@ import { AdminModule } from './components/admin/admin.module';
     NavbarComponent,
     FooterComponent,
     ContactComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminSidebarComponent,
+    AdminLoginComponent,
+    PostToursComponent,
+    ReviewQueryComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,6 @@ import { AdminModule } from './components/admin/admin.module';
     LoadingBarModule,
     LoadingBarRouterModule,
     LoadingBarHttpClientModule,
-    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,71 @@
-<p>review-query works!</p>
+<h1 class="text-3xl text-center md:ml-[250px] mt-4"><span class="text-orange-400">Customers</span> Query</h1>
+<div class="md:ml-[250px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
+    <div *ngFor="let query of queries" [ngClass]="{'hidden': query.status==='converted'||query.status==='closed'}">
+        <div class="ring-orange-400 ring rounded-2xl p-4 flex justify-between flex-col max-sm:w-[350px] relative">
+            <div>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">FirstName:</span> {{query.firstName}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">LastName:</span> {{query.lastName}}</h1>
+                <a href="mailto:{{query.email}}" class="text-base text-slate-800 border-b-2 block"><span class="text-orange-600">Email:</span> {{query.email}}</a>
+                <a href="tel:+91{{query.phone}}" class="text-base text-slate-800 border-b-2 block"><span class="text-orange-600">Phone:</span> {{query.phone}}</a>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Date:</span> {{query.date}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Status:</span> {{query.status | uppercase}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Query:</span> {{query.query}}</h1>
+            </div>
+            <form #adminQueryUpdate="ngForm" class="flex justify-between items-center flex-row mt-4" (ngSubmit)="updateQuery(adminQueryUpdate.value)">
+                <input [(ngModel)]="query.id" name="id" type="text" class="hidden" [value]="query.id">
+                <select ngModel name="status" id="status" class="bg-white ">
+                    <option value="">--Select--</option>
+                    <option value="replied">Replied</option>
+                    <option value="converted">Converted</option>
+                    <option value="closed">Closed</option>
+                </select>
+                <button class="p-2 border-2 text-xs border-orange-400 rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-colors duration-200">Submit</button>
+            </form>
+            <div class="text-sm rounded-md bg-blue-600 text-white absolute -top-3 -right-3 p-1 animate-bounce" [ngClass]="{'hidden': query.status!=='new'}">NEW</div>
+        </div>
+    </div>
+</div>
+
+
+<h1 class="text-3xl text-center md:ml-[250px] mt-8"><span class="text-orange-400">Converted</span> Query</h1>
+<div class="md:ml-[250px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
+    <div *ngFor="let query of queries" [ngClass]="{'hidden': query.status==='replied'||query.status==='new'||query.status==='closed'}">
+        <div class="ring-orange-400 ring rounded-2xl p-4 flex justify-between flex-col max-sm:w-[350px] relative">
+            <div>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">FirstName:</span> {{query.firstName}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">LastName:</span> {{query.lastName}}</h1>
+                <a href="mailto:{{query.email}}" class="text-base text-slate-800 border-b-2 block"><span class="text-orange-600">Email:</span> {{query.email}}</a>
+                <a href="tel:+91{{query.phone}}" class="text-base text-slate-800 border-b-2 block"><span class="text-orange-600">Phone:</span> {{query.phone}}</a>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Date:</span> {{query.date}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Status:</span> {{query.status | uppercase}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Query:</span> {{query.query}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="text-3xl text-center md:ml-[250px] mt-8"><span class="text-orange-400">Closed</span> Query</h1>
+<div class="md:ml-[250px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
+    <div *ngFor="let query of queries" [ngClass]="{'hidden': query.status==='converted'||query.status==='new'||query.status==='replied'}">
+        <div class="ring-orange-400 ring rounded-2xl p-4 flex justify-between flex-col max-sm:w-[350px] relative">
+            <div>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">FirstName:</span> {{query.firstName}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">LastName:</span> {{query.lastName}}</h1>
+                <a href="mailto:{{query.email}}" class="text-base text-slate-800 border-b-2 block"><span class="text-orange-600">Email:</span> {{query.email}}</a>
+                <a href="tel:+91{{query.phone}}" class="text-base text-slate-800 border-b-2 block"><span class="text-orange-600">Phone:</span> {{query.phone}}</a>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Date:</span> {{query.date}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Status:</span> {{query.status | uppercase}}</h1>
+                <h1 class="text-base text-slate-800 border-b-2"><span class="text-orange-600">Query:</span> {{query.query}}</h1>
+            </div>
+            <form #adminQueryUpdate="ngForm" class="flex justify-between items-center flex-row mt-4" (ngSubmit)="updateQuery(adminQueryUpdate.value)">
+                <input [(ngModel)]="query.id" name="id" type="text" class="hidden" [value]="query.id">
+                <select ngModel name="status" id="status" class="bg-white ">
+                    <option value="">--Select--</option>
+                    <option value="replied">Reopen</option>
+                </select>
+                <button class="p-2 border-2 text-xs border-orange-400 rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-colors duration-200">Submit</button>
+            </form>
+            <div class="text-sm rounded-md bg-blue-600 text-white absolute -top-3 -right-3 p-1 animate-bounce" [ngClass]="{'hidden': query.status!=='new'}">NEW</div>
+        </div>
+    </div>
+</div>

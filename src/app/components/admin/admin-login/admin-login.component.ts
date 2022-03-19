@@ -23,7 +23,7 @@ export class AdminLoginComponent implements OnInit {
   adminLogin(data:any){
     if(data.username === this.adminData.username){
       if(data.password === this.adminData.password){
-        this.router.navigate(['/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh']);
+        this.router.navigate(['/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh/reviewcontrol']);
         window.localStorage.setItem('adminToken', `YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh${this.adminData.token}`);
       }else{
         this.nullValueAll();

@@ -64,6 +64,11 @@ export class ToursService {
     return docData(collRef, {idField: 'id'}) as Observable<Tours[]>;
   }
 
+  updateQueryStatus(status:any, id:any){
+    const collRef = doc(this.firestore, `homeQuery/${id}`);
+    return updateDoc(collRef, {status: status});
+  }
+
   deleteAdminHomeQuery(id:any){
     const collRef = doc(this.firestore, `homeQuery/${id}`);
     return deleteDoc(collRef);
@@ -81,7 +86,7 @@ export class ToursService {
 
   getAdminTourQuery(){
     const collRef = collection(this.firestore, 'tourQuery');
-    return collectionData(collRef, {idField: 'id'});
+    return collectionData(collRef, {idField: 'id'}) as Observable<Tours[]>;
   }
 
   updateAdminDomesticTour(active:boolean, id:string){

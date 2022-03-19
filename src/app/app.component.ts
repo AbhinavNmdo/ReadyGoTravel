@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router, Event } from '@angular/router';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faLocationArrow, faEnvelope, faBars, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
@@ -28,6 +29,24 @@ export class AppComponent {
   active:boolean = false;
   navFix:boolean =false;
   subNav:boolean = false;
+  admin:boolean = true;
+  login:boolean = false;
+  slug:any;
+  
+  adminLogin(){
+    if(window.location.href.split('/')[3] !== 'admin'){
+      this.admin = false;
+    }else{
+      this.admin = true;
+    }
+  }
+  constructor(){
+    this.adminLogin();
+    if(!this.admin){
+      this.login = true
+    }
+  }
+
   @HostListener('window:scroll', ['$event'])
   navbarFix(){
     if(window.pageYOffset > 95){
