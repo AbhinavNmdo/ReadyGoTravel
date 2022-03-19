@@ -29,6 +29,5 @@ export class AdminComponent implements OnInit {
   logout(){
     window.localStorage.removeItem('adminToken');
     this.router.navigate(['/']);
-    window.location.reload();
   }
 }

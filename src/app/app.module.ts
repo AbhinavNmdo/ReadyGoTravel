@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TourComponent } from './components/tour/tour.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
@@ -20,9 +19,8 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
-import { AdminComponent } from './components/admin/admin/admin.component';
-import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
-import { ReviewQueryComponent } from './components/admin/review-query/review-query.component';
+import { AdminRoutingModule } from './components/admin/admin-routing.module';
+import { AdminModule } from './components/admin/admin.module';
 
 
 @NgModule({
@@ -34,10 +32,7 @@ import { ReviewQueryComponent } from './components/admin/review-query/review-que
     NavbarComponent,
     FooterComponent,
     ContactComponent,
-    PaymentComponent,
-    AdminComponent,
-    AdminLoginComponent,
-    ReviewQueryComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +45,8 @@ import { ReviewQueryComponent } from './components/admin/review-query/review-que
     NgxSimpleParallaxJsModule,
     LoadingBarModule,
     LoadingBarRouterModule,
-    LoadingBarHttpClientModule
+    LoadingBarHttpClientModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,27 +5,19 @@ import { AboutComponent } from './components/about/about.component';
 import { TourComponent } from './components/tour/tour.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PaymentComponent } from './components/payment/payment.component';
-import { AdminComponent } from './components/admin/admin/admin.component';
-import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
-import { ReviewQueryComponent } from './components/admin/review-query/review-query.component';
 
-const routes: Routes = [
+const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'tours', children:[
     {path: '', component: TourComponent},
   ]},
   {path: 'contact', component: ContactComponent},
-  {path: 'payments', component: PaymentComponent},
-  {path: 'admin', children:[
-    {path: '', component: AdminLoginComponent},
-    {path: 'YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh', component: AdminComponent},
-    {path: 'YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh/reviewQuery', component: ReviewQueryComponent},
-  ]},
+  {path: 'payments', component: PaymentComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
