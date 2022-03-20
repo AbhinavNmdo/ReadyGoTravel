@@ -1,50 +1,62 @@
 <h1 class="text-3xl text-center md:ml-[250px] mt-4"><span class="text-orange-400">Post</span> Tour</h1>
-<form class="flex justify-center items-center gap-8 md:ml-[250px] px-5 mt-10 flex-col mb-14" >
+<form #postTour="ngForm" (ngSubmit)="submitTour(postTour.value)" class="flex justify-center items-center gap-8 md:ml-[250px] px-5 mt-10 flex-col mb-14" >
     <div class="grid grid-cols-1 md:grid-cols-3 flex-col gap-8 w-full">
         <div class="flex justify-center items-center flex-col gap-1">
             <label for="name" class="mr-auto text-slate-700">Package Name:</label>
-            <input type="text" id="name" name="name" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
+            <input ngModel type="text" id="name" name="name" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
         </div>
         <div class="flex justify-center items-center flex-col gap-1">
             <label for="duration" class="mr-auto text-slate-700">Duration:</label>
-            <input type="text" id="duration" name="duration" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
+            <input ngModel type="text" id="duration" name="duration" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
         </div>
         <div class="flex justify-center items-center flex-col gap-1">
             <label for="mode" class="mr-auto text-slate-700">Travelling Mode:</label>
-            <input type="text" id="mode" name="mode" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
+            <input ngModel type="text" id="mode" name="mode" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
         </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 flex-col gap-8 w-full">
         <div class="flex justify-center items-center flex-col gap-1">
             <label for="price" class="mr-auto text-slate-700">Starting Price: (Per Person):</label>
-            <input type="text" id="price" name="price" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
+            <input ngModel type="text" id="price" name="price" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
         </div>
         <div class="flex justify-center items-center flex-col gap-1">
             <label for="pic" class="mr-auto text-slate-700">Choose Picture for Front Card:</label>
-            <input type="file" (change)="uploadChange($event)" id="pic" name="pic" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
+            <input ngModel type="file" (change)="uploadChange($event)" id="pic" name="pic" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
         </div>
 
     </div>
     <div class="flex justify-center items-center flex-col gap-1 w-full">
-        <label for="places" class="mr-auto text-slate-700">Places Covered: (Saperate By Comma " , ")</label>
-        <input type="text" id="places" name="places" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
+        <label for="places" class="mr-auto text-slate-700">Places Covered: (Saperate By Comma " , " without space)</label>
+        <input ngModel type="text" id="places" name="places" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required>
     </div>
     <div class="flex justify-center items-center flex-col gap-1 w-full">
         <label for="desc" class="mr-auto text-slate-700">Description:</label>
-        <textarea id="desc" name="desc" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required></textarea>
+        <textarea ngModel id="desc" name="desc" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required></textarea>
     </div>
-    <div id="iternity" name="iternity" class="w-full relative h">
-        <div class="flex justify-center items-center flex-col gap-1 w-full">
-            <label for="desc" class="mr-auto text-slate-700">Day 1:</label>
-            <textarea id="desc" name="desc" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required></textarea>
+    <div id="iternity" name="iternity" class="w-full relative">
+        <div *ngFor="let i of days; let index = index" class="flex justify-center items-center flex-row gap-1 w-full">
+            <div class="flex flex-col w-full">
+                <label for="day-{{index+1}}" class="mr-auto text-slate-700">Day {{index+1}}:</label>
+                <textarea ngModel id="day-{{index+1}}" name="day-{{index+1}}" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required></textarea>
+            </div>
         </div>
-        <button class="absolute bottom-2 right-2 bg-green-700 text-white p-1 rounded-xl" (click)="addDay()">Add Days</button>
+        <div class="flex justify-between items-center mt-5">
+            <a class="bg-green-600 text-white p-1 rounded-md text-xs cursor-pointer" (click)="addDay()">Add Days</a>
+            <a class="bg-red-600 text-white p-1 rounded-md text-xs cursor-pointer" (click)="removeDays()">Remove</a>
+        </div>
     </div>
     <div class="flex justify-center items-center flex-col gap-1 w-full">
-        <label for="includions" class="mr-auto text-slate-700">Package Inclusions: (Saperate By " * ")</label>
-        <textarea id="includions" name="includions" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required></textarea>
+        <label for="inclusions" class="mr-auto text-slate-700">Package Inclusions: (Saperate By " * " without space)</label>
+        <textarea ngModel id="inclusions" name="inclusions" class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" required></textarea>
+    </div>
+    <div class="flex justify-center items-center flex-col gap-1 w-full">
+        <label for="category" class="mr-auto text-slate-700">Select Where To Post</label>
+        <select ngModel class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full" name="category" id="category">
+            <option value="domestic">Domestic</option>
+            <option value="foreign">Foreign</option>
+        </select>
     </div>
     <div class="flex justify-center items-center">
-        <button type="submit" (click)="submitTour()" class="p-2 text-lg px-8 border-2 border-orange-400 text-[#122e44] rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest pb-3">Submit Tour</button>
+        <button type="submit" class="p-2 text-lg px-8 border-2 border-orange-400 text-[#122e44] rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-all duration-300 font-[Oswald] tracking-widest pb-3">Submit Tour</button>
     </div>
 </form>

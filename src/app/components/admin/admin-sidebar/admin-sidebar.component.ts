@@ -10,6 +10,10 @@ import { Event, Router } from '@angular/router';
 export class AdminSidebarComponent implements OnInit {
 
   hidden:boolean = false;
+  burger:boolean = false;
+  activeNav(){
+    this.burger = !this.burger;
+  }
   constructor(private location:Location, private router:Router) {
     location.onUrlChange((url)=>{
       if(url.startsWith('/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh')){

@@ -88,17 +88,16 @@
 
 
 <!-- Tours Section -->
-<h1 class="text-center text-3xl font-bold mt-20 max-sm:text-2xl">Our Best Tours</h1>
-<p class="text-center text-slate-400 mx-5 max-sm:text-sm sm:mx-8 md:mx-32 lg:mx-[20%] text-base mt-5">Discovery Tour provides a variety of great tours to travelers throughout the world. We offer top deals at affordable prices and we can create the most unforgettable holiday for you!</p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10 justify-items-center overflow-hidden p-2">
+<h1 class="text-center text-3xl font-bold mt-10 max-sm:text-2xl -translate-y-1">Our Best Tours</h1>
+<p class="text-center text-slate-400 mx-5 max-sm:text-sm sm:mx-8 md:mx-32 lg:mx-[20%] text-base mt-5 -translate-y-1">Discovery Tour provides a variety of great tours to travelers throughout the world. We offer top deals at affordable prices and we can create the most unforgettable holiday for you!</p>
+<h1 class="text-left text-3xl font-bold mt-10 max-sm:text-2xl -translate-y-1 mx-5 sm:mx-8 md:mx-16 lg:mx-32"><span class="text-orange-500">Domestic</span> Tours</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10 justify-items-center -translate-y-1 overflow-hidden p-2">
 
     <!-- Tour Cards -->
     <!-- Domestic Tours -->
-    <div data-aos="fade-right" *ngFor="let domestic of domesticPackages" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(domestic.packageName)" (mouseout)="hoverMe(null)">
-        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden" [ngSwitch]="domestic.id">
-            <img *ngSwitchCase="'goa'" src="assets/cards/goa.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===domestic.packageName}">
-            <img *ngSwitchCase="'manali'" src="assets/cards/manali.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===domestic.packageName}">
-            <img *ngSwitchCase="'gujrat'" src="assets/cards/somnath.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===domestic.packageName}">
+    <div data-aos="fade-right" *ngFor="let domestic of domesticPackages" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(domestic.name)" (mouseout)="hoverMe(null)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="{{domestic.pic}}" alt="{{domestic.name}}" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===domestic.name}">
         </div>
         <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
             <fa-icon [icon]="faWifi"></fa-icon>
@@ -107,19 +106,24 @@
             <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
         <div class="flex justify-center items-start px-4 flex-col">
-            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">{{domestic.packageName}}</h1>
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">{{domestic.name}}</h1>
         </div>
         <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
-            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From {{domestic.startingPrice}} Rs. per person.</h1>
+            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From {{domestic.price}} Rs. per person.</h1>
         </div>
     </div>
 
+</div>
+
+
+
+<h1 class="text-left text-3xl font-bold mt-10 max-sm:text-2xl -translate-y-1 mx-5 sm:mx-8 md:mx-16 lg:mx-32"><span class="text-orange-500">Foreign</span> Tours</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-8 md:mx-16 lg:mx-32 gap-10 mt-10 justify-items-center -translate-y-1 overflow-hidden p-2">
+
     <!-- Foreign Tours -->
-    <div data-aos="fade-right" *ngFor="let foreign of foreignPackages" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(foreign.packageName)" (mouseout)="hoverMe(null)">
-        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden" [ngSwitch]="foreign.id">
-            <img *ngSwitchCase="'dubai'" src="assets/cards/dubai.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===foreign.packageName}">
-            <img *ngSwitchCase="'london'" src="assets/cards/london.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===foreign.packageName}">
-            <img *ngSwitchCase="'singapore'" src="assets/cards/singapore.jpg" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===foreign.packageName}">
+    <div data-aos="fade-right" *ngFor="let foreign of foreignPackages" class="flex justify-center items-center flex-col w-full shadow-3xl rounded-2xl h-fit bg-white max-md:max-w-sm" (mouseover)="hoverMe(foreign.name)" (mouseout)="hoverMe(null)">
+        <div class="w-[85%] mt-7 rounded-2xl overflow-hidden">
+            <img src="{{foreign.pic}}" alt="goa" class="w-full object-cover rounded-2xl transition-all duration-300" [ngClass]="{'scale-110': cardHover===foreign.name}">
         </div>
         <div class="bg-white flex justify-center items-center py-2 px-4 gap-4 rounded-xl shadow-3xl -translate-y-4 text-slate-600">
             <fa-icon [icon]="faWifi"></fa-icon>
@@ -128,10 +132,10 @@
             <fa-icon [icon]="faUtensils"></fa-icon>
         </div>
         <div class="flex justify-center items-start px-4 flex-col">
-            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">{{foreign.packageName}}</h1>
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]">{{foreign.name}}</h1>
         </div>
         <div class="border-t border-gray-300 w-[85%] pb-5 mt-3">
-            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From {{foreign.startingPrice}} Rs. per person.</h1>
+            <h1 class="mx-auto pt-5 text-center text-slate-800">Starting From {{foreign.price}} Rs. per person.</h1>
         </div>
     </div>
 

@@ -114,7 +114,7 @@ export class ToursService {
     return deleteDoc(collRef)
   }
 
-  postForeignTour(tour:any){
+  postAdminForeignTour(tour:any){
     const collRef = collection(this.firestore, "foreignTours");
     return addDoc(collRef, tour)
   }

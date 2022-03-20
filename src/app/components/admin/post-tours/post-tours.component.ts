@@ -2,7 +2,8 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
-import { finalize } from 'rxjs';
+import { finalize, startWith } from 'rxjs';
+import { ToursService } from 'src/app/services/fetchTours/tours.service';
 
 @Component({
   selector: 'app-post-tours',
@@ -24,21 +25,33 @@ export class PostToursComponent implements OnInit {
     }
   }
 
-  constructor(private storage:AngularFireStorage, private location:Location, private router:Router) {
+  constructor(private storage:AngularFireStorage, private location:Location, private router:Router, private tourService:ToursService) {
     this.adminCheck();
   }
 
   ngOnInit(): void {
   }
+  days:any = ['day1'];
   addDay(){
-    
+    let length = 2
+    this.days.push(`day${length}`)
+    length++
+  }
+  removeDays(){
+    if(this.days.length !== 1){
+      this.days.splice(this.days.length-1, 1)
+    }
   }
   path:any;
   url:any;
   uploadChange($event:any){
     this.path = $event.target.files[0];
   }
-  submitTour(){
+  iternity:any = [];
+  submitTour(data:any){
+    const res = Object.keys(data).filter(v => v.startsWith('day')).map(e => data[e]);
+    const inclusions = data.inclusions.split('*')
+    const places = data.places.split(',')
     const filepath = `/files/${this.path.name}`;
     const storageRef = this.storage.ref(filepath);
     const uploadTask = this.storage.upload(filepath, this.path);
@@ -46,7 +59,22 @@ export class PostToursComponent implements OnInit {
       finalize(()=>{
         storageRef.getDownloadURL().subscribe((url)=>{
           this.url = url;
-          console.log(this.url)
+          const tour = {
+            name: data.name,
+            duration: data.duration,
+            mode: data.mode,
+            price: data.price,
+            pic: this.url,
+            places: places,
+            desc: data.desc,
+            inclusions: inclusions,
+            days: res
+          }
+          if(data.category === 'domestic'){
+            this.tourService.postAdminDomesticTour(tour)
+          }else if(data.category === 'foreign'){
+            this.tourService.postAdminForeignTour(tour);
+          }
         })
       })
     ).subscribe();
