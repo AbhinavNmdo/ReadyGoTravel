@@ -23,6 +23,8 @@ import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-si
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
 import { PostToursComponent } from './components/admin/post-tours/post-tours.component';
 import { ReviewQueryComponent } from './components/admin/review-query/review-query.component';
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFireStorageModule} from '@angular/fire/compat/storage'
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { ReviewQueryComponent } from './components/admin/review-query/review-que
     LoadingBarModule,
     LoadingBarRouterModule,
     LoadingBarHttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

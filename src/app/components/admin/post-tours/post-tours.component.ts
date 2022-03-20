@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-post-tours',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostToursComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storage:AngularFireStorage) { }
 
   ngOnInit(): void {
   }
-
+  addDay(){
+    
+  }
+  path:any;
+  uploadChange($event:any){
+    this.path = $event.target.files[0];
+  }
+  submitTour(){
+    const filepath = "/files"
+  }
 }

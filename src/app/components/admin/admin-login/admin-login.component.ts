@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
@@ -9,10 +9,12 @@ import { ToursService } from 'src/app/services/fetchTours/tours.service';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
+  @Output() admin = new EventEmitter();
   adminData:any;
   constructor(private adminService:ToursService, private router:Router) {
     this.adminService.getAdminDetail().subscribe((data)=>{
       this.adminData = data;
+      this.admin.emit(data)
     });
   }
 

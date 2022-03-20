@@ -1,5 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Event, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -8,7 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AdminSidebarComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  hidden:boolean = false;
+  constructor(private location:Location, private router:Router) {
+    location.onUrlChange((url)=>{
+      if(url.startsWith('/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh')){
+        this.hidden = false
+      }else{
+        this.hidden = true
+      }
+    })
+  }
 
   ngOnInit(): void {
   }
