@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoadingBarService } from '@ngx-loading-bar/core';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
 import { AdminLoginComponent } from '../admin-login/admin-login.component';
 
@@ -24,20 +25,38 @@ export class ReviewQueryComponent implements OnInit {
     }
   }
 
-  queries:any;
-  constructor(private queryService:ToursService, private location:Location, private router:Router) {
-    this.queryService.getAdminHomeQuery().subscribe((data)=>{
-      this.queries = data;
-      console.log(data)
+  newQuery:any;
+  repliedQuery:any;
+  convertedQuery:any;
+  closedQuery:any;
+  constructor(private queryService:ToursService, private location:Location, private router:Router, private loadingBar:LoadingBarService) {
+    this.queryService.getNewQuery().subscribe((data)=>{
+      this.newQuery = data;
     })
     this.adminCheck();
+    this.queryService.getRepliedQuery().subscribe((data)=>{
+      this.repliedQuery = data;
+    })
+    this.queryService.getConvertedQuery().subscribe((data)=>{
+      this.convertedQuery = data;
+    })
+    this.queryService.getClosedQuery().subscribe((data)=>{
+      this.closedQuery = data;
+    })
   }
 
   ngOnInit(): void {
   }
 
   updateQuery(data:any){
-    this.queryService.updateQueryStatus(data.status, data.id);
+    this.loadingBar.start();
+    if(data.status !== ''){
+      this.queryService.updateQueryStatus(data).then(()=>{
+        this.loadingBar.stop();
+      });
+    }else{
+      this.loadingBar.stop();
+    }
   }
 
 }

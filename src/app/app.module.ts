@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxSimpleParallaxJsModule } from 'ngx-simple-parallax-js';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,7 +24,9 @@ import { AdminLoginComponent } from './components/admin/admin-login/admin-login.
 import { PostToursComponent } from './components/admin/post-tours/post-tours.component';
 import { ReviewQueryComponent } from './components/admin/review-query/review-query.component';
 import {AngularFireModule} from '@angular/fire/compat';
-import {AngularFireStorageModule} from '@angular/fire/compat/storage'
+import {AngularFireStorageModule} from '@angular/fire/compat/storage';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { TourDetailComponent } from './components/tour-detail/tour-detail.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import {AngularFireStorageModule} from '@angular/fire/compat/storage'
     AdminSidebarComponent,
     AdminLoginComponent,
     PostToursComponent,
-    ReviewQueryComponent
+    ReviewQueryComponent,
+    TourDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,9 @@ import {AngularFireStorageModule} from '@angular/fire/compat/storage'
     LoadingBarRouterModule,
     LoadingBarHttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,12 +13,22 @@ export class AdminLoginComponent implements OnInit {
   adminData:any;
   constructor(private adminService:ToursService, private router:Router) {
     this.adminService.getAdminDetail().subscribe((data)=>{
-      this.adminData = data;
-      this.admin.emit(data)
+      this.adminData = data[0];
+      this.admin.emit(data[0])
+      console.log(data[0])
     });
   }
 
   ngOnInit(): void {
+  }
+
+  
+  autoLogout(loginTime:Date){
+    console.log(loginTime.getMinutes())
+    // setTimeout(() => {
+    //   window.localStorage.removeItem('adminToken');
+    //   this.router.navigate(['/']);
+    // }, date+5000);
   }
 
   nullValue:any;
@@ -27,6 +37,8 @@ export class AdminLoginComponent implements OnInit {
       if(data.password === this.adminData.password){
         this.router.navigate(['/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh/reviewcontrol']);
         window.localStorage.setItem('adminToken', `YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh${this.adminData.token}`);
+        const loginTime = new Date();
+        this.autoLogout(loginTime);
       }else{
         this.nullValueAll();
         console.log('password')

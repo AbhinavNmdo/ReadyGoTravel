@@ -68,19 +68,27 @@ export class HomeComponent implements OnInit {
   
   // Contact Form Implimentation
   completed:string = 'none';
+  date = new Date();
   inputValue:any;
   contact(data:any){
     this.loadingbar.start();
+    var ISTTime = new Date(this.date.getTime()+(330*60*1000));
+    const today = ISTTime.getDate();
+    const month = ISTTime.getMonth()+1;
+    const year = ISTTime.getFullYear();
+    const hour = ISTTime.getHours();
+    const minutes = ISTTime.getMinutes();
     const query:object = {
-      idField: data.firstname,
       firstName: data.firstname,
       lastName: data.lastname,
       email: data.email,
       phone: data.phone,
-      query: data.query
+      query: data.query,
+      status: 'new',
+      date: today+'/'+month+'/'+year+', '+ hour+':'+minutes
     }
     try {
-      this.tourData.postHomeQuery(query).then(()=>{
+      this.tourData.postQuery(query).then(()=>{
         this.completed = 'success';
         this.inputValue = null
         this.loadingbar.stop();

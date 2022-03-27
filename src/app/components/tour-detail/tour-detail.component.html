@@ -1,0 +1,99 @@
+<!-- Hero Section -->
+<div>
+    <div style="background-image: url({{tour.pic}}); background-size: center;"
+        class="h-[12rem] md:h-[22rem] lg:h-[30rem] relative w-full flex justify-start items-center bg-cover bg-bottom bg-no-repeat">
+    </div>
+    <div style="background: rgba(8, 8, 8, 0.295);"
+        class="h-[12rem] md:h-[22rem] lg:h-[30rem] absolute top-[8rem] nav-max-md:top-[3rem] left-0 w-full flex flex-col justify-center items-start pl-4 md:pl-20 before:content-[''] before:bg-[url('assets/cloud.png')] before:absolute before:-bottom-[5.5rem] before:left-0 before:w-full before:h-[20rem] before:bg-no-repeat before:bg-bottom before:overflow-visible">
+        <h1 data-aos="fade-down" data-aos-offset="0"
+            class="text-white text-5xl max-sm:text-2xl max-md:text-4xl max-sm:text-center font-bold md:mt-5">
+            {{tour.name}} Package</h1>
+        <div data-aos="fade-down" data-aos-delay="250" data-aos-offset="0"
+            class="flex flex-row justify-center items-center mt-2 gap-3 text-xl">
+            <fa-icon class="text-white -rotate-[38deg]" [icon]="faSlash"></fa-icon>
+            <h1 class="text-white">ReadyGo Travels</h1>
+        </div>
+    </div>
+</div>
+<div class="-translate-y-0 mt-10 grid grid-cols-1 lg:grid-cols-12 mx-5 sm:mx-8 md:mx-16 lg:mx-32">
+    <div class="col-span-8 p-3">
+        <div>
+            <h1 class="text-left text-2xl md:text-4xl font-[KaushanScript] text-orange-400">Description:</h1>
+            <h1 class="mt-3 md:mt-5 text-sm md:text-base text-slate-600 ml-5">{{tour.desc}}</h1>
+        </div>
+        <div class="mt-10">
+            <h1 class="text-left text-2xl md:text-4xl font-[KaushanScript]"><span
+                    class="text-orange-400 font-[KaushanScript]">{{tour.name}}</span> Attractions:</h1>
+            <div class="mt-6 flex flex-col gap-2 text-xl ml-5">
+                <ul class="text-lg leading-8">
+                    <li *ngFor="let place of tour.places; let i = index"><span
+                            class="font-[KaushanScript] text-2xl">&#9992;&#10240;</span>{{place}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-10">
+            <h1 class="text-left text-2xl md:text-4xl font-[KaushanScript]"><span
+                    class="text-orange-400 font-[KaushanScript]">Package</span> Detail:</h1>
+            <div class="mt-6 flex flex-col gap-3 ml-5">
+                <div>
+                    <h1 class="font-[KaushanScript] text-xl">Price:-</h1>
+                    <p class="text-base ml-3 mt-1">{{tour.duration}}</p>
+                </div>
+                <div>
+                    <h1 class="font-[KaushanScript] text-xl">Duration:-</h1>
+                    <p class="text-base ml-3 mt-1">{{tour.price}}</p>
+                </div>
+                <div>
+                    <h1 class="font-[KaushanScript] text-xl">Transport Modes:-</h1>
+                    <p class="text-base ml-3 mt-1">{{tour.mode}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10">
+            <h1 class="text-left text-2xl md:text-4xl font-[KaushanScript]"><span
+                class="text-orange-400 font-[KaushanScript]">Itinerary</span></h1>
+            <div class="mt-6 flex flex-col gap-2 text-xl ml-5">
+                <div *ngFor="let days of tour.days; let i = index" class="mt-3">
+                    <h1 class="font-[KaushanScript]">Day {{i+1}}:-</h1>
+                    <p class="text-base ml-3 mt-1">{{days}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-4 p-3">
+        <form class="flex justify-center items-center gap-4 bg-white rounded-xl p-5 flex-col"
+            style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <h1 class="text-center mx-auto text-3xl font-[KaushanScript]"><span
+                    class="text-orange-400  font-[KaushanScript]">Send</span> Query</h1>
+            <div class="w-full">
+                <label for="firstname" class="text-slate-600">Firstname</label>
+                <input ngModel type="text" id="firstname" name="firstname"
+                    class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
+            </div>
+            <div class="w-full">
+                <label for="lastname" class="text-slate-600">Lastname</label>
+                <input ngModel type="text" id="lastname" name="lastname"
+                    class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
+            </div>
+            <div class="w-full">
+                <label for="email" class="text-slate-600">Email</label>
+                <input ngModel type="email" id="email" name="email"
+                    class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
+            </div>
+            <div class="w-full">
+                <label for="phone" class="text-slate-600">Phone</label>
+                <input ngModel type="text" id="phone" name="phone"
+                    class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
+            </div>
+            <div class="w-full">
+                <label for="phone" class="text-slate-600">Query</label>
+                <textarea ngModel type="text" id="phone" name="phone"
+                    class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full"></textarea>
+            </div>
+            <div class="w-full flex justify-center items-center">
+                <button
+                    class="p-3 px-5 border-2 border-orange-400 rounded-xl hover:bg-orange-400 hover:text-white font-bold transition-colors duration-200 font-[Oswald] tracking-widest">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

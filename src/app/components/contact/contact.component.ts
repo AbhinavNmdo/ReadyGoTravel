@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
       date: today+'/'+month+'/'+year+', '+ hour+':'+minutes
     }
     try {
-      this.tourData.postHomeQuery(query).then(()=>{
+      this.tourData.postQuery(query).then(()=>{
         this.completed = 'success';
         this.inputValue = null
         this.loadingbar.stop();
