@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-admin-login',
@@ -15,8 +16,30 @@ export class AdminLoginComponent implements OnInit {
     this.adminService.getAdminDetail().subscribe((data)=>{
       this.adminData = data[0];
       this.admin.emit(data[0])
-      console.log(data[0])
     });
+  }
+
+  postAdmin = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  })
+
+  submit(){
+    const data = this.postAdmin.value;
+    if(data.username === this.adminData.username){
+      if(data.password === this.adminData.password){
+        this.router.navigate(['/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh/reviewcontrol']);
+        window.localStorage.setItem('adminToken', `YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh${this.adminData.token}`);
+        const loginTime = new Date();
+        this.autoLogout(loginTime);
+      }else{
+        this.router.navigate(['/admin']);
+        this.postAdmin.reset();
+      }
+    }else{
+      this.router.navigate(['/admin']);
+      this.postAdmin.reset();
+    }
   }
 
   ngOnInit(): void {
@@ -31,26 +54,22 @@ export class AdminLoginComponent implements OnInit {
     // }, date+5000);
   }
 
-  nullValue:any;
-  adminLogin(data:any){
-    if(data.username === this.adminData.username){
-      if(data.password === this.adminData.password){
-        this.router.navigate(['/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh/reviewcontrol']);
-        window.localStorage.setItem('adminToken', `YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh${this.adminData.token}`);
-        const loginTime = new Date();
-        this.autoLogout(loginTime);
-      }else{
-        this.nullValueAll();
-        console.log('password')
-        this.router.navigate(['/admin']);
-      }
-    }else{
-      this.nullValueAll();
-      console.log('username')
-      this.router.navigate(['/admin'])
-    }
-  }
-  nullValueAll(){
-    this.nullValue=null;
-  }
+  // adminLogin(data:any){
+  //   if(data.username === this.adminData.username){
+  //     if(data.password === this.adminData.password){
+  //       this.router.navigate(['/admin/YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh/reviewcontrol']);
+  //       window.localStorage.setItem('adminToken', `YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh${this.adminData.token}`);
+  //       const loginTime = new Date();
+  //       this.autoLogout(loginTime);
+  //     }else{
+  //       this.nullValueAll();
+  //       console.log('password')
+  //       this.router.navigate(['/admin']);
+  //     }
+  //   }else{
+  //     this.nullValueAll();
+  //     console.log('username')
+  //     this.router.navigate(['/admin'])
+  //   }
+  // }
 }

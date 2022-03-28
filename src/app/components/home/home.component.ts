@@ -4,7 +4,7 @@ import * as AOS from 'aos';
 import {faEnvelope, faPaperPlane} from '@fortawesome/free-regular-svg-icons';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 import {faPlane, faHotel, faBook, faCar, faPassport, faTrain, faWifi, faUtensils, faPhone, faLocationArrow} from '@fortawesome/free-solid-svg-icons';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -60,17 +60,20 @@ export class HomeComponent implements OnInit {
     // this.tourData.postDomesticTour(this.tour);
   }
 
-  cardHover:any;
-  query:any;
-  hoverMe(data:any){
-    this.cardHover = data;
-  }
-  
+  contactForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    phone: new FormControl(''),
+    query: new FormControl('')
+  })
+
+
   // Contact Form Implimentation
   completed:string = 'none';
   date = new Date();
-  inputValue:any;
-  contact(data:any){
+  postContact(){
+    const data = this.contactForm.value;
     this.loadingbar.start();
     var ISTTime = new Date(this.date.getTime()+(330*60*1000));
     const today = ISTTime.getDate();
@@ -79,8 +82,8 @@ export class HomeComponent implements OnInit {
     const hour = ISTTime.getHours();
     const minutes = ISTTime.getMinutes();
     const query:object = {
-      firstName: data.firstname,
-      lastName: data.lastname,
+      firstName: data.firstName,
+      lastName: data.lastName,
       email: data.email,
       phone: data.phone,
       query: data.query,
@@ -90,7 +93,7 @@ export class HomeComponent implements OnInit {
     try {
       this.tourData.postQuery(query).then(()=>{
         this.completed = 'success';
-        this.inputValue = null
+        this.contactForm.reset();
         this.loadingbar.stop();
         this.returnComplete();
       });
@@ -100,6 +103,13 @@ export class HomeComponent implements OnInit {
       this.loadingbar.stop();
     }
   }
+
+  cardHover:any;
+  query:any;
+  hoverMe(data:any){
+    this.cardHover = data;
+  }
+  
   returnComplete(){
     setTimeout(() => {
       this.completed = 'none';

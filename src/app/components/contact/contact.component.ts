@@ -4,6 +4,7 @@ import { faLocationArrow, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { ToursService } from 'src/app/services/fetchTours/tours.service';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -22,12 +23,20 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  contactForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    phone: new FormControl(''),
+    query: new FormControl('')
+  })
+
+
   // Contact Form Implimentation
   completed:string = 'none';
-  inputValue:any;
   date = new Date();
-
-  contact(data:any){
+  postContact(){
+    const data = this.contactForm.value;
     this.loadingbar.start();
     var ISTTime = new Date(this.date.getTime()+(330*60*1000));
     const today = ISTTime.getDate();
@@ -35,10 +44,9 @@ export class ContactComponent implements OnInit {
     const year = ISTTime.getFullYear();
     const hour = ISTTime.getHours();
     const minutes = ISTTime.getMinutes();
-    console.log(month)
     const query:object = {
-      firstName: data.firstname,
-      lastName: data.lastname,
+      firstName: data.firstName,
+      lastName: data.lastName,
       email: data.email,
       phone: data.phone,
       query: data.query,
@@ -48,7 +56,7 @@ export class ContactComponent implements OnInit {
     try {
       this.tourData.postQuery(query).then(()=>{
         this.completed = 'success';
-        this.inputValue = null
+        this.contactForm.reset();
         this.loadingbar.stop();
         this.returnComplete();
       });

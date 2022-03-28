@@ -5,18 +5,18 @@
     <img src="assets/cloud.png" alt="Clouds" class="absolute max-sm:-bottom-3 -bottom-7 object-cover left-0 w-full overflow-hidden">
     
     <!-- Contact Part -->
-    <form #homeContact="ngForm" (ngSubmit)="contact(homeContact.value)" class="flex justify-center items-center flex-col col-span-7 gap-8">
+    <form [formGroup]="contactForm" (ngSubmit)="postContact()" class="flex justify-center items-center flex-col col-span-7 gap-8">
         <h1 class="text-left text-2xl md:text-4xl text-slate-600 my-7 mr-auto"><span class="text-orange-400">Contact</span> Us</h1>
         <!-- Firstname and Lastname -->
         <div class="flex flex-row justify-center items-center gap-4 max-sm:flex-wrap">
             <div class="w-full">
                 <label for="firstname" class="text-slate-600">First Name</label>
-                <input [value]="inputValue" ngModel type="text" id="firstname" name="firstname"
+                <input formControlName="firstName" type="text" id="firstname" name="firstname"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
             <div class="w-full">
                 <label for="lastname" class="text-slate-600">Last Name</label>
-                <input [value]="inputValue" ngModel type="text" id="lastname" name="lastname"
+                <input formControlName="lastName" type="text" id="lastname" name="lastname"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
         </div>
@@ -25,12 +25,12 @@
         <div class="flex flex-row justify-center items-center gap-4 max-sm:flex-wrap w-full">
             <div class="w-full">
                 <label for="email" class="text-slate-600">E-mail</label>
-                <input [value]="inputValue" ngModel type="text" id="email" name="email"
+                <input formControlName="email" type="text" id="email" name="email"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
             <div class="w-full">
                 <label for="phone" class="text-slate-600">Phone</label>
-                <input [value]="inputValue" ngModel type="text" id="phone" name="phone"
+                <input formControlName="phone" type="text" id="phone" name="phone"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full">
             </div>
         </div>
@@ -39,7 +39,7 @@
         <div class="flex flex-row justify-center items-center w-full">
             <div class="w-full">
                 <label for="query" class="text-slate-600">Your Query</label>
-                <textarea [value]="inputValue" ngModel id="query" name="query" cols="100" rows="2" type="text"
+                <textarea formControlName="query" id="query" name="query" cols="100" rows="2" type="text"
                     class="p-2 bg-slate-50 border focus:ring focus:outline-none rounded-xl ring-orange-400 w-full"></textarea>
             </div>
         </div>
