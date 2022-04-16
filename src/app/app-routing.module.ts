@@ -9,6 +9,7 @@ import { AdminLoginComponent } from './components/admin/admin-login/admin-login.
 import { ReviewQueryComponent } from './components/admin/review-query/review-query.component';
 import { PostToursComponent } from './components/admin/post-tours/post-tours.component';
 import { TourDetailComponent } from './components/tour-detail/tour-detail.component';
+import { ReviewTourComponent } from './components/admin/review-tour/review-tour.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     {path: '', component: AdminLoginComponent},
     {path: 'YzxtyD4SUw9g64U9TKSVtUvLnFKLjDem6AftGnMh', children:[
       {path: 'reviewcontrol', component: ReviewQueryComponent},
-      {path: 'tourscontrol', component: PostToursComponent}
+      {path: 'tourscontrol', component: PostToursComponent},
+      {path: 'tours', component: ReviewTourComponent}
     ]}
   ]}
 ];

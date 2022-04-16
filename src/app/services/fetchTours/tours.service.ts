@@ -161,13 +161,18 @@ export class ToursService {
   postAdminDomesticTour(tour:any){
     // const collRef = collection(this.firestore, "domesticTours");
     // return addDoc(collRef, tour)
-    return this.adb.collection('domesticTours').add(tour);
+    return this.adb.collection('tours').add(tour);
+  }
+  postAdminTour(tour:any){
+    // const collRef = collection(this.firestore, "domesticTours");
+    // return addDoc(collRef, tour)
+    return this.adb.collection('tours').add(tour);
   }
 
   updateForeignTour(active:boolean, id:string){
     // const collRef = doc(this.firestore, `foreignTours/${id}`)
     // return updateDoc(collRef, {active: active});
-    return this.adb.collection('foreignTours').doc(id).update({is_active: active});
+    return this.adb.collection('tours').doc(id).update({is_active: active});
   }
 
   deleteForeignTour(id:string){

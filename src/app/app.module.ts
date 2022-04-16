@@ -27,6 +27,7 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { TourDetailComponent } from './components/tour-detail/tour-detail.component';
+import { ReviewTourComponent } from './components/admin/review-tour/review-tour.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { TourDetailComponent } from './components/tour-detail/tour-detail.compon
     AdminLoginComponent,
     PostToursComponent,
     ReviewQueryComponent,
-    TourDetailComponent
+    TourDetailComponent,
+    ReviewTourComponent
   ],
   imports: [
     BrowserModule,

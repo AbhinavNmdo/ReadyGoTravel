@@ -1,5 +1,5 @@
 <h1 class="text-3xl text-center md:ml-[220px] mt-4"><span class="text-orange-400">Customers</span> Query</h1>
-<div class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
+<div *ngIf="newQueryExist; else notExistNew" class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
     <div *ngFor="let query of newQuery">
         <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" class="rounded-2xl p-4 flex justify-between flex-col max-sm:w-[350px] relative">
             <div>
@@ -24,9 +24,12 @@
         </div>
     </div>
 </div>
+<ng-template #notExistNew>
+    <h1 class="text-center">No Query related to New Query</h1>
+</ng-template>
 
 <h1 class="text-3xl text-center md:ml-[220px] mt-4"><span class="text-orange-400">Replied</span> Query</h1>
-<div class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
+<div *ngIf="repliedQueryExist; else notExistReplied" class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
     <div *ngFor="let query of repliedQuery">
         <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" class="rounded-2xl p-4 flex justify-between flex-col max-sm:w-[350px] relative">
             <div>
@@ -51,10 +54,13 @@
         </div>
     </div>
 </div>
+<ng-template #notExistReplied>
+    <h1 class="text-center">No Query related to Replied Query</h1>
+</ng-template>
 
 
 <h1 class="text-3xl text-center md:ml-[220px] mt-4"><span class="text-orange-400">Converted</span> Query</h1>
-<div class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
+<div *ngIf="convertedQueryExist; else notExistConverted" class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
     <div *ngFor="let query of convertedQuery">
         <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" class="rounded-2xl p-4 flex justify-between flex-col max-sm:w-[350px] relative">
             <div>
@@ -69,10 +75,13 @@
         </div>
     </div>
 </div>
+<ng-template #notExistConverted>
+    <h1 class="text-center">No Query related to Converted Query</h1>
+</ng-template>
 
 
 <h1 class="text-3xl text-center md:ml-[220px] mt-4"><span class="text-orange-400">Closed</span> Query</h1>
-<div class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
+<div *ngIf="closedQueryExist; else notExistClosed" class="md:ml-[220px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:justify-items-center px-5 gap-6 mt-10">
     <div *ngFor="let query of closedQuery">
         <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" class="rounded-2xl p-4 flex justify-between flex-col max-sm:w-[350px] relative">
             <div>
@@ -97,3 +106,6 @@
         </div>
     </div>
 </div>
+<ng-template #notExistClosed>
+    <h1 class="text-center">No Query related to Closed Query</h1>
+</ng-template>
